@@ -24,7 +24,7 @@ function Navbar() {
         <div className="flex justify-between items-center h-20">
           {/* Logo or Brand Name (optional) */}
           <div className="text-white font-bold text-xl">
-            <Link to="/">Meeraj Ahmad</Link>
+            <Link to="/">GMA</Link>
           </div>
 
           {/* Desktop Navigation - hidden on mobile */}

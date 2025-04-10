@@ -25,7 +25,7 @@ export const projects = [
     description: "A robot that can detect metals and objects, controlled by Arduino microcontroller using internet for surveillance purposes.",
     image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80",
     blog: "#",
-    github: "https://drive.google.com/file/d/1AneQ3H60V0Rta1IyU94G-0sHmpf405r4/view"
+    Publication: "https://drive.google.com/file/d/1AneQ3H60V0Rta1IyU94G-0sHmpf405r4/view"
   }
 ];
 

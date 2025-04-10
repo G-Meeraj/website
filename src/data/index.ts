@@ -7,6 +7,13 @@ export const projects = [
     github: "https://github.com/G-Meeraj/Health-Care-Chatbot"
   },
   {
+    title: "Heart Disease Prediction",
+    description: "This project is a Heart Disease Prediction web application built using Flask and Machine Learning. The model predicts the likelihood of a person having heart disease based on various input parameters.",
+    image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80",
+    blog: "#",
+    github: "https://github.com/G-Meeraj/Heart-Disease-Prediction"
+  },
+  {
     title: "Flight Fare Prediction",
     description: "This project is a Flight Price Prediction web application built using Flask and Machine Learning. The model predicts the price of flight tickets based on various input parameters.",
     image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80",

@@ -21,7 +21,7 @@ export const projects = [
     github: "https://github.com/G-Meeraj/Flight-Price-Prediction"
   },
   {
-    title: "Surveillance Robot Based On 10T",
+    title: "Surveillance Robot Based On IoT",
     description: "A robot that can detect metals and objects, controlled by Arduino microcontroller using internet for surveillance purposes.",
     image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80",
     blog: "#",

@@ -1,10 +1,38 @@
 import React, { useState, useEffect, useRef, useCallback, memo } from 'react';
-import { getDocs, addDoc, collection, onSnapshot, query, orderBy, serverTimestamp } from 'firebase/firestore';
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { db, storage } from '../firebase-comment';
 import { MessageCircle, UserCircle2, Loader2, AlertCircle, Send, ImagePlus, X } from 'lucide-react';
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+// Add this near the top of the file after the imports
+const STORAGE_KEY = 'portfolio_comments';
+
+// Modify the initialComments declaration
+const getInitialComments = () => {
+    const savedComments = localStorage.getItem(STORAGE_KEY);
+    if (savedComments) {
+        // Parse stored comments and convert date strings back to Date objects
+        return JSON.parse(savedComments).map(comment => ({
+            ...comment,
+            createdAt: new Date(comment.createdAt)
+        }));
+    }
+    return [
+        {
+            id: '1',
+            content: 'This portfolio looks amazing! Love the design and attention to detail.',
+            userName: 'Sarah Chen',
+            profileImage: 'https://randomuser.me/api/portraits/women/1.jpg',
+            createdAt: new Date('2025-04-16T10:30:00')
+        },
+        {
+            id: '2',
+            content: 'Great work on the projects! The tech stack you\'ve used is impressive.',
+            userName: 'John Smith',
+            profileImage: null,
+            createdAt: new Date('2025-04-15T15:45:00')
+        }
+    ];
+};
 
 const Comment = memo(({ comment, formatDate, index }) => (
     <div 
@@ -85,7 +113,7 @@ const CommentForm = memo(({ onSubmit, isSubmitting, error }) => {
                 <input
                     type="text"
                     value={userName}
-                    onChange={(e) => setUserName(e.target.value)}z
+                    onChange={(e) => setUserName(e.target.value)}
                     placeholder="Enter your name"
                     className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all"
                     required
@@ -182,12 +210,11 @@ const CommentForm = memo(({ onSubmit, isSubmitting, error }) => {
 });
 
 const Komentar = () => {
-    const [comments, setComments] = useState([]);
+    const [comments, setComments] = useState(getInitialComments());
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [error, setError] = useState('');
 
     useEffect(() => {
-        // Initialize AOS
         AOS.init({
             once: false,
             duration: 1000,
@@ -195,48 +222,39 @@ const Komentar = () => {
     }, []);
 
     useEffect(() => {
-        const commentsRef = collection(db, 'portfolio-comments');
-        const q = query(commentsRef, orderBy('createdAt', 'desc'));
-        
-        return onSnapshot(q, (querySnapshot) => {
-            const commentsData = querySnapshot.docs.map((doc) => ({
-                id: doc.id,
-                ...doc.data(),
-            }));
-            setComments(commentsData);
-        });
-    }, []);
-
-    const uploadImage = useCallback(async (imageFile) => {
-        if (!imageFile) return null;
-        const storageRef = ref(storage, `profile-images/${Date.now()}_${imageFile.name}`);
-        await uploadBytes(storageRef, imageFile);
-        return getDownloadURL(storageRef);
-    }, []);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(comments));
+    }, [comments]);
 
     const handleCommentSubmit = useCallback(async ({ newComment, userName, imageFile }) => {
         setError('');
         setIsSubmitting(true);
         
         try {
-            const profileImageUrl = await uploadImage(imageFile);
-            await addDoc(collection(db, 'portfolio-comments'), {
+            // Simulate loading
+            await new Promise(resolve => setTimeout(resolve, 1000));
+
+            // Create a new comment object
+            const newCommentObj = {
+                id: Date.now().toString(),
                 content: newComment,
                 userName,
-                profileImage: profileImageUrl,
-                createdAt: serverTimestamp(),
-            });
+                profileImage: imageFile ? URL.createObjectURL(imageFile) : null,
+                createdAt: new Date()
+            };
+
+            // Add the new comment to the beginning of the array
+            setComments(prevComments => [newCommentObj, ...prevComments]);
         } catch (error) {
             setError('Failed to post comment. Please try again.');
             console.error('Error adding comment: ', error);
         } finally {
             setIsSubmitting(false);
         }
-    }, [uploadImage]);
+    }, []);
 
     const formatDate = useCallback((timestamp) => {
         if (!timestamp) return '';
-        const date = timestamp.toDate();
+        const date = timestamp;
         const now = new Date();
         const diffMinutes = Math.floor((now - date) / (1000 * 60));
         const diffHours = Math.floor(diffMinutes / 60);

@@ -216,6 +216,13 @@ const AboutPage = () => {
             >
               I'm a passionate Data Scientist and Analyst with a strong foundation in statistics, machine learning, and data visualization. I specialize in turning complex datasets into actionable insights that drive strategic decisions and business growth.
             </p>
+            <p 
+              className="text-base sm:text-lg lg:text-xl text-gray-400 leading-relaxed text-justify pb-4 sm:pb-0"
+              data-aos="fade-right"
+              data-aos-duration="1500"
+            >
+              With hands-on experience in Python,SQL, and tools like Pandas, Scikit-learn, Power BI, and Tableau, I've built and deployed models for predictive analytics, classification problems, and trend analysis across various domains.
+              </p>
 
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">
               <a href="https://drive.google.com/file/d/1Wee8i66SDHwN2MBj5bAEKZqjCdPSQtU9/view" className="w-full lg:w-auto">

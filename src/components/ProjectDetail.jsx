@@ -13,14 +13,14 @@ export const PROJECTS_DATA = [
     Title: "Health care Chatbot",
     Description: "A healthcare chatbot project aims to develop an AI-powered virtual assistant that provides patients with convenient access to medical information, symptom analysis, and guidance.",
     Img: "https://miro.medium.com/v2/resize:fit:1400/1*KT-dZRwMOA1KuTzVOomxHw.gif",
-    Link: "https://yourportfolio.com",
+    Link: "http://www.linkedin.com/in/meeraj-ahmad-gonnuru-406ab2330",
     Github: "https://github.com/G-Meeraj/Health-Care-Chatbot",
-    TechStack: ["Python", "Machine Learning", "Flask"],
+    TechStack: ["Python", "Machine Learning", "Flask","Html","Css","OpenAI","React"],
     Features: [
-      "Responsive design for all devices",
-      "Smooth page transitions and animations",
-      "Project showcase with detailed information",
-      "Contact form with validation"
+      "Users can input symptoms to receive possible disease predictions.",
+      "The healthcare chatbot uses machine learning models to predict diseases based on user-reported symptoms, providing personalized healthcare advice and guidance.",
+      "Develop an intuitive UI with HTML, CSS, and JavaScript",
+      "Deploy the chatbot as a web service using Flask and test it to ensure its effectiveness in providing healthcare assistance."
     ]
   },
   {
@@ -30,7 +30,7 @@ export const PROJECTS_DATA = [
     Img: "https://media.licdn.com/dms/image/v2/D5622AQEvzdaHJ0oXkw/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1707987384761?e=2147483647&v=beta&t=fO8P09T0lXA_N1e5jtVTk1QGuaPPzy7SUES3vP1Z6aU",
     Link: "https://www.linkedin.com/posts/meeraj-ahmad-gonnuru-406ab2330_machinelearning-heartdiseaseprediction-aiinhealthcare-activity-7316398949693624322-AWjy?utm_source=share&utm_medium=member_android&rcm=ACoAAFN0wsYBDwo8yxAlkBL7UcKD71I-blOj5yo",
     Github: "https://github.com/G-Meeraj/Heart-Disease-Prediction",
-    TechStack: ["Python", "Machine Learning", "Flask"],
+    TechStack: ["Python", "Machine Learning", "Flask","Html","Css"],
     Features: [
       "Easy-to-use web form for inputting health metrics",
       "Machine learning model predicts likelihood of heart disease",
@@ -43,9 +43,9 @@ export const PROJECTS_DATA = [
     Title: "Flight Fare Prediction",
     Description: "This project is a Flight Price Prediction web application built using Flask and Machine Learning. The model predicts the price of flight tickets based on various input parameters.",
     Img: "https://miro.medium.com/v2/resize:fit:1400/0*3_PnJ1Bt1tVJ8Ssd.gif",
-    Link: "https://ecommerce-demo.example.com",
+    Link: "https://www.linkedin.com/posts/meeraj-ahmad-gonnuru-406ab2330_machinelearning-flask-internshipproject-activity-7317452566433267713-Kubj?utm_source=share&utm_medium=member_android&rcm=ACoAAFN0wsYBDwo8yxAlkBL7UcKD71I-blOj5yo",
     Github: "https://github.com/G-Meeraj/Flight-Price-Prediction",
-    TechStack: ["Python", "Machine Learning", "Flask"],
+    TechStack: ["Python", "Machine Learning", "Flask","Html","Css"],
     Features: [
       "Predicts flight ticket prices based on user inputs.",
       "PUtilizes a trained Machine Learning model.",
@@ -59,15 +59,15 @@ export const PROJECTS_DATA = [
     Title: "Health Insurance Prediction",
     Description: "A modern weather application that provides real-time weather data and forecasts for any location worldwide. Utilizes OpenWeatherMap API to deliver accurate weather information with a clean, intuitive interface.",
     Img: "https://user-images.githubusercontent.com/91398845/207703224-2d95afc5-b18b-4323-8e39-1d1dab8e95b9.png",
-    Link: "https://weather-app-demo.example.com",
-    Github: "https://github.com/yourusername/weather-forecast-app",
-    TechStack: ["HTML", "CSS", "Javascript", "OpenWeatherMap API"],
+    Link: "https://www.linkedin.com/posts/meeraj-ahmad-gonnuru-406ab2330_machinelearning-flask-datascience-activity-7318901786726027266-hAtj?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFN0wsYBDwo8yxAlkBL7UcKD71I-blOj5yo",
+    Github: "https://github.com/G-Meeraj/Health-Insurance-Prediction",
+    TechStack: ["Python", "Machine Learning", "Flask","Html","Css"],
     Features: [
-      "Real-time weather data for any global location",
-      "5-day weather forecast with detailed information",
-      "Geolocation support for automatic local weather",
-      "Dynamic backgrounds based on current weather conditions",
-      "Responsive design for mobile and desktop devices"
+      "Predicts Health Insurance Prediction based on user inputs.",
+      "PUtilizes a trained Machine Learning model",
+      "SFlask-based web application with an interactive frontend.",
+      "Supports categorical data encoding for better predictions.",
+      "Simple and easy-to-use interface."
     ]
   },
   {
@@ -75,15 +75,15 @@ export const PROJECTS_DATA = [
     Title: "Bike rental",
     Description: "A comprehensive task management application designed to help individuals and teams organize their work efficiently. Features include task creation, assignment, progress tracking, and deadline management.",
     Img: "https://d36g7qg6pk2cm7.cloudfront.net/assets/long_term/desktop/rbx_banner-a8582ea39f40667b3c94a9bc269a69effb6be8ce78f2f7c6aab995f51469c6c9.webp",
-    Link: "https://task-manager-demo.example.com",
-    Github: "https://github.com/yourusername/task-management-system",
-    TechStack: ["React", "Tailwind", "Firebase", "Redux"],
+    Link: "http://www.linkedin.com/in/meeraj-ahmad-gonnuru-406ab2330",
+    Github: "https://github.com/G-Meeraj/Bike-Rental",
+    TechStack: ["Python", "Machine Learning", "Flask","Html","Css"],
     Features: [
-      "Intuitive drag-and-drop interface for task management",
-      "Real-time collaboration for team projects",
-      "Customizable task categories and priority levels",
-      "Deadline notifications and reminders",
-      "Detailed analytics and progress reporting"
+      "Predicts Bike rental based on user inputs.",
+      "PUtilizes a trained Machine Learning model",
+      "SFlask-based web application with an interactive frontend.",
+      "Supports categorical data encoding for better predictions.",
+      "Simple and easy-to-use interface."
     ]
   },
   {

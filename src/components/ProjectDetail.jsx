@@ -57,7 +57,7 @@ export const PROJECTS_DATA = [
   {
     id: 4,
     Title: "Health Insurance Prediction",
-    Description: "A modern weather application that provides real-time weather data and forecasts for any location worldwide. Utilizes OpenWeatherMap API to deliver accurate weather information with a clean, intuitive interface.",
+    Description: "This project aims to build a web-based application that predicts individual health insurance costs based on user input using a trained machine learning model. The model considers various features such as age, gender, BMI, smoking status, and region to provide an estimated insurance premium.",
     Img: "https://user-images.githubusercontent.com/91398845/207703224-2d95afc5-b18b-4323-8e39-1d1dab8e95b9.png",
     Link: "https://www.linkedin.com/posts/meeraj-ahmad-gonnuru-406ab2330_machinelearning-flask-datascience-activity-7318901786726027266-hAtj?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFN0wsYBDwo8yxAlkBL7UcKD71I-blOj5yo",
     Github: "https://github.com/G-Meeraj/Health-Insurance-Prediction",
@@ -73,7 +73,7 @@ export const PROJECTS_DATA = [
   {
     id: 5,
     Title: "Bike rental",
-    Description: "A comprehensive task management application designed to help individuals and teams organize their work efficiently. Features include task creation, assignment, progress tracking, and deadline management.",
+    Description: "The goal of this project is to develop a machine learning model that accurately predicts the number of bikes rented on a given day based on various environmental and seasonal factors. This can help bike rental companies optimize inventory, staffing, and maintenance schedules.",
     Img: "https://d36g7qg6pk2cm7.cloudfront.net/assets/long_term/desktop/rbx_banner-a8582ea39f40667b3c94a9bc269a69effb6be8ce78f2f7c6aab995f51469c6c9.webp",
     Link: "http://www.linkedin.com/in/meeraj-ahmad-gonnuru-406ab2330",
     Github: "https://github.com/G-Meeraj/Bike-Rental",
@@ -158,7 +158,7 @@ const ProjectStats = ({ project }) => {
         </div>
         <div className="flex-grow">
           <div className="text-lg md:text-xl font-semibold text-blue-200">{techStackCount}</div>
-          <div className="text-[10px] md:text-xs text-gray-400">Total Teknologi</div>
+          <div className="text-[10px] md:text-xs text-gray-400">Total Technologies</div>
         </div>
       </div>
 
@@ -168,7 +168,7 @@ const ProjectStats = ({ project }) => {
         </div>
         <div className="flex-grow">
           <div className="text-lg md:text-xl font-semibold text-purple-200">{featuresCount}</div>
-          <div className="text-[10px] md:text-xs text-gray-400">Fitur Utama</div>
+          <div className="text-[10px] md:text-xs text-gray-400">Key Features</div>
         </div>
       </div>
     </div>

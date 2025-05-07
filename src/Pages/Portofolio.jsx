@@ -141,12 +141,15 @@ export default function FullWidthTabs() {
       // For certificates, you can either:
       // 1. Create a static array similar to PROJECTS_DATA, or
       // 2. Keep the existing Firebase fetch for certificates only
-      
       // Option 1: Use static certificates data
       const staticCertificates = [
         {
-          Img: "public/ccnoc.jpg"
-        }
+          Img: "/ccnoc.jpg"
+        },
+        {
+          Img: "/iabac.jpg"
+        },
+        
         // Add more certificates as needed
       ];
       

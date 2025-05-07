@@ -76,7 +76,7 @@ export const PROJECTS_DATA = [
     Description: "The goal of this project is to develop a machine learning model that accurately predicts the number of bikes rented on a given day based on various environmental and seasonal factors. This can help bike rental companies optimize inventory, staffing, and maintenance schedules.",
     Img: "https://d36g7qg6pk2cm7.cloudfront.net/assets/long_term/desktop/rbx_banner-a8582ea39f40667b3c94a9bc269a69effb6be8ce78f2f7c6aab995f51469c6c9.webp",
     Link: "http://www.linkedin.com/in/meeraj-ahmad-gonnuru-406ab2330",
-    Github: "https://github.com/G-Meeraj/Bike-Rental",
+    Github: "https://github.com/G-Meeraj/G-Meeraj-Bike-Rental-Prediction-",
     TechStack: ["Python", "Machine Learning", "Flask","Html","Css"],
     Features: [
       "Predicts Bike rental based on user inputs.",

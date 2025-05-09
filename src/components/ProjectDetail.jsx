@@ -114,6 +114,12 @@ const TECH_ICONS = {
   default: Package,
 };
 
+const GITHUB_PROFILE = {
+  username: "G-Meeraj",
+  url: "https://github.com/G-Meeraj",
+  description: "View all my projects on GitHub"
+};
+
 const TechBadge = ({ tech }) => {
   const Icon = TECH_ICONS[tech] || TECH_ICONS["default"];
   
@@ -174,6 +180,28 @@ const ProjectStats = ({ project }) => {
     </div>
   );
 };
+
+const GitHubProfileCard = () => (
+  <a 
+    href={GITHUB_PROFILE.url}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group block w-full bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-xl border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 p-4 mb-8"
+  >
+    <div className="flex items-center gap-4">
+      <Github className="w-8 h-8 text-blue-400 group-hover:rotate-12 transition-transform duration-300" />
+      <div>
+        <h3 className="text-lg font-semibold text-white group-hover:text-blue-400 transition-colors">
+          {GITHUB_PROFILE.username}
+        </h3>
+        <p className="text-sm text-gray-400">
+          {GITHUB_PROFILE.description}
+        </p>
+      </div>
+      <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-blue-400 transition-colors ml-auto" />
+    </div>
+  </a>
+);
 
 const handleGithubClick = (githubLink) => {
   if (githubLink === 'Private') {
@@ -246,6 +274,9 @@ const ProjectDetails = () => {
               <span className="text-white/90 truncate">{project.Title}</span>
             </div>
           </div>
+
+          {/* Add the GitHub Profile Card here */}
+          <GitHubProfileCard />
 
           <div className="grid lg:grid-cols-2 gap-8 md:gap-16">
             <div className="space-y-6 md:space-y-10 animate-slideInLeft">

@@ -182,6 +182,17 @@ const AboutPage = () => {
     },
   ], [totalProjects, totalCertificates, YearExperience]);
 
+  const handleCVDownload = (type) => {
+    const confirmed = window.confirm(`Do you want to download the ${type}?`);
+    if (confirmed) {
+      const cvLinks = {
+        'Professional Resume': 'https://drive.google.com/file/d/1QQc_NB17aWFEZ8KMKA2w_tT_yxmuVYJW/view?usp=sharing',
+        'ATS Resume': 'https://drive.google.com/file/d/1EAZ3-HGyyEPfiD-o5gQM4r-r1ck4n-Dl/view?usp=sharing'
+      };
+      window.open(cvLinks[type], '_blank');
+    }
+  };
+
   return (
     <div
       className="h-auto pb-[10%] text-white overflow-hidden px-[5%] sm:px-[5%] lg:px-[10%] mt-10 sm-mt-0" 
@@ -225,23 +236,43 @@ const AboutPage = () => {
               </p>
 
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">
-              <a href="https://drive.google.com/file/d/1krAJrm-xNphiPLTg9sradkc5T-eLUbG6/view?usp=sharing" className="w-full lg:w-auto">
-              <button 
-                data-aos="fade-up"
-                data-aos-duration="800"
-                className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 shadow-lg hover:shadow-xl animate-bounce-slow"
-              >
-                <FileText className="w-4 h-4 sm:w-5 sm:h-5" /> Download CV
-              </button>
-              </a>
+              <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+                <div className="relative group">
+                  <button 
+                    onClick={() => handleCVDownload('Professional Resume')}
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                    className="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 rounded-lg bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl animate-bounce-slow"
+                  >
+                    <FileText className="w-4 h-4 sm:w-5 sm:h-5" /> Modern CV
+                  </button>
+                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                    Download my Modern CV
+                  </div>
+                </div>
+                
+                <div className="relative group">
+                  <button 
+                    onClick={() => handleCVDownload('ATS Resume')}
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                    className="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 rounded-lg bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl animate-bounce-slow"
+                  >
+                    <FileText className="w-4 h-4 sm:w-5 sm:h-5" /> ATS CV
+                  </button>
+                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                    Download my ATS-friendly CV
+                  </div>
+                </div>
+              </div>
               <a href="#Portofolio" className="w-full lg:w-auto">
-              <button 
-                data-aos="fade-up"
-                data-aos-duration="1000"
-                className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg border border-[#a855f7]/50 text-[#a855f7] font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 hover:bg-[#a855f7]/10 animate-bounce-slow delay-200"
-              >
-                <Code className="w-4 h-4 sm:w-5 sm:h-5" /> View Projects
-              </button>
+                <button 
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                  className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg border border-[#a855f7]/50 text-[#a855f7] font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 hover:bg-[#a855f7]/10 animate-bounce-slow delay-200"
+                >
+                  <Code className="w-4 h-4 sm:w-5 sm:h-5" /> View Projects
+                </button>
               </a>
             </div>
           </div>

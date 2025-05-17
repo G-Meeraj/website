@@ -187,7 +187,7 @@ const AboutPage = () => {
     if (confirmed) {
       const cvLinks = {
         'Professional Resume': 'https://drive.google.com/file/d/1QQc_NB17aWFEZ8KMKA2w_tT_yxmuVYJW/view?usp=sharing',
-        'ATS Resume': 'https://drive.google.com/file/d/1EAZ3-HGyyEPfiD-o5gQM4r-r1ck4n-Dl/view?usp=sharing'
+        'ATS Resume': 'https://drive.google.com/file/d/1KYoNAOMuScHUVLiGb1x3g00pMetSMk9l/view?usp=sharing'
       };
       window.open(cvLinks[type], '_blank');
     }

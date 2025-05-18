@@ -81,7 +81,7 @@ const WORDS = ["Machine Learning", "Deployment & Production","Tools & Technologi
 const TECH_STACK = ["Python", "Jupyter Notebook","Scikit-learn", "SQL", "Power-BI", "Flask"];
 const SOCIAL_LINKS = [
   { icon: Github, link: "https://github.com/G-Meeraj" },
-  { icon: Linkedin, link: "https://www.linkedin.com/in/meeraj-ahmad-gonnuru-406ab2330/" },
+  { icon: Linkedin, link: "https://www.linkedin.com/in/meeraj-datascientist/" },
   { icon: Instagram, link: "https://www.instagram.com/_m_e_e_r_a_j?igsh=ajI2eHJhdjgybXc5" }
 ];
 

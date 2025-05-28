@@ -144,10 +144,16 @@ export default function FullWidthTabs() {
       // Option 1: Use static certificates data
       const staticCertificates = [
         {
-          Img: "/ccnoc.jpg"
+          Img: "/Data-science-certification.jpg"
+        },
+        {
+          Img: "/intenship Certification.jpg"
         },
         {
           Img: "/iabac.jpg"
+        },
+        {
+          Img: "/Nasscom Certification.jpg"
         },
         
         // Add more certificates as needed

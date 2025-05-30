@@ -130,7 +130,7 @@ const Certificate = ({ ImgSertif, title, issuer, date, description }) => {
 							onClick={handleDownload}
 							sx={{
 								backgroundColor: "rgba(0, 0, 0, 0.8)", // Dark black transparent background
-								color: "#a855f7", // Purple text
+								color: "white", // White text
 								border: "1px solid rgba(139, 92, 246, 0.3)", // Light purple border
 								borderRadius: "24px", // Rounded corners
 								padding: "8px 16px", // Button padding
@@ -138,6 +138,7 @@ const Certificate = ({ ImgSertif, title, issuer, date, description }) => {
 								transition: "all 0.3s ease",
 								"&:hover": {
 									backgroundColor: "rgba(0, 0, 0, 1)", // Fully black on hover
+									color: "white", // Ensure text remains white on hover
 									borderColor: "rgba(139, 92, 246, 0.5)", // Darker purple border on hover
 								},
 							}}>

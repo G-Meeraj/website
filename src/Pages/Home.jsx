@@ -77,8 +77,8 @@ const SocialLink = memo(({ icon: Icon, link }) => (
 const TYPING_SPEED = 100;
 const ERASING_SPEED = 50;
 const PAUSE_DURATION = 2000;
-const WORDS = ["Machine Learning", "Deployment & Production","Tools & Technologies"];
-const TECH_STACK = ["Python", "Jupyter Notebook","Scikit-learn", "SQL", "Power-BI", "Flask"];
+const WORDS = ["APIs & Web Technologies","ML Model Deployment","Tools & Technologies","Libraries & Frameworks"];
+const TECH_STACK = ["Python","Machine Learning","deep Learning","data visualization Tools", "Flask (web framework)","statistics","Scikit-learn","Jupyter Notebook",];
 const SOCIAL_LINKS = [
   { icon: Github, link: "https://github.com/G-Meeraj" },
   { icon: Linkedin, link: "https://www.linkedin.com/in/meeraj-datascientist/" },
@@ -159,7 +159,7 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#030014] overflow-hidden" id="Home">
+    <div className="min-h-screen bg-[#000000] overflow-hidden" id="Home">
       <div className={`relative z-10 transition-all duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
         <div className="container mx-auto px-[5%] sm:px-6 lg:px-[0%] min-h-screen">
           <div className="flex flex-col lg:flex-row items-center justify-center h-screen md:justify-between gap-0 sm:gap-12 lg:gap-20">
@@ -214,7 +214,7 @@ const Home = () => {
               onMouseLeave={() => setIsHovering(false)}
               data-aos="fade-left"
               data-aos-delay="600">
-              <div className="relative w-full opacity-90">
+              <div className="relative w-full h-auto animate-butter-smooth">
                 <div className={`absolute inset-0 bg-gradient-to-r from-[#6366f1]/10 to-[#a855f7]/10 rounded-3xl blur-3xl transition-all duration-700 ease-in-out ${
                   isHovering ? "opacity-50 scale-105" : "opacity-20 scale-100"
                 }`}>

@@ -68,12 +68,17 @@ function App() {
   const [showWelcome, setShowWelcome] = useState(true);
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LandingPage showWelcome={showWelcome} setShowWelcome={setShowWelcome} />} />
-        <Route path="/project/:id" element={<ProjectPageLayout />} />
-      </Routes>
-    </BrowserRouter>
+    <div className="bg-[#000000] text-white min-h-screen"> {/* Added dark background */}
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={<LandingPage showWelcome={showWelcome} setShowWelcome={setShowWelcome} />}
+          />
+          <Route path="/project/:id" element={<ProjectPageLayout />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 

@@ -114,11 +114,7 @@ const TECH_ICONS = {
   default: Package,
 };
 
-const GITHUB_PROFILE = {
-  username: "G-Meeraj",
-  url: "https://github.com/G-Meeraj",
-  description: "View all my projects on GitHub"
-};
+
 
 const TechBadge = ({ tech }) => {
   const Icon = TECH_ICONS[tech] || TECH_ICONS["default"];

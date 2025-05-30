@@ -16,7 +16,7 @@ const TypewriterEffect = ({ text }) => {
       } else {
         clearInterval(timer);
       }
-    }, 260);
+    }, 150); // Reduced interval for faster animation
     
     return () => clearInterval(timer);
   }, [text]);
@@ -31,8 +31,8 @@ const TypewriterEffect = ({ text }) => {
 
 const BackgroundEffect = () => (
   <div className="absolute inset-0 overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 blur-3xl animate-pulse" />
-    <div className="absolute inset-0 bg-gradient-to-tr from-indigo-600/10 via-transparent to-purple-600/10 blur-2xl animate-float" />
+    {/* Solid dark black background */}
+    <div className="absolute inset-0 bg-[#000000]" />
   </div>
 );
 
@@ -50,8 +50,8 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
 
   useEffect(() => {
     AOS.init({
-      duration: 1000,
-      once: false,
+      duration: 800, // Increased duration for slower animations
+      once: true, // Ensures animations only happen once
       mirror: false,
     });
 
@@ -59,9 +59,8 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
       setIsLoading(false);
       setTimeout(() => {
         onLoadingComplete?.();
-      }, 1000);
-    }, 4000);
-    
+      }, 800); // Increased delay for slower transition
+    }, 2500); // Increased loading time
     return () => clearTimeout(timer);
   }, [onLoadingComplete]);
 
@@ -71,12 +70,12 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
       scale: 1.1,
       filter: "blur(10px)",
       transition: {
-        duration: 0.8,
+        duration: 0.6, // Increased duration for slower exit animation
         ease: "easeInOut",
         when: "beforeChildren",
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1, // Increased stagger for slower child animations
+      },
+    },
   };
 
   const childVariants = {
@@ -84,17 +83,17 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
       y: -20,
       opacity: 0,
       transition: {
-        duration: 0.4,
-        ease: "easeInOut"
-      }
-    }
+        duration: 0.4, // Increased duration for slower child exit animation
+        ease: "easeInOut",
+      },
+    },
   };
 
   return (
     <AnimatePresence>
       {isLoading && (
         <motion.div
-          className="fixed inset-0 bg-[#030014]"
+          className="fixed inset-0 bg-[#000000]" // Solid dark black background
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit="exit"

@@ -70,6 +70,37 @@ export const PROJECTS_DATA = [
       "Simple and easy-to-use interface."
     ]
   },
+  
+  {
+    id: 5,
+    Title: "Bike rental",
+    Description: "The goal of this project is to develop a machine learning model that accurately predicts the number of bikes rented on a given day based on various environmental and seasonal factors. This can help bike rental companies optimize inventory, staffing, and maintenance schedules.",
+    Img: "https://d36g7qg6pk2cm7.cloudfront.net/assets/long_term/desktop/rbx_banner-a8582ea39f40667b3c94a9bc269a69effb6be8ce78f2f7c6aab995f51469c6c9.webp",
+    Link: "http://www.linkedin.com/in/meeraj-ahmad-gonnuru-406ab2330",
+    Github: "https://github.com/G-Meeraj/G-Meeraj-Bike-Rental-Prediction-",
+    TechStack: ["Python", "Machine Learning", "Flask","Html","Css"],
+    Features: [
+      "Predicts Bike rental based on user inputs.",
+      "PUtilizes a trained Machine Learning model",
+      "SFlask-based web application with an interactive frontend.",
+      "Supports categorical data encoding for better predictions.",
+      "Simple and easy-to-use interface."
+    ]
+  },
+  {
+    id: 6,
+    Title: "Surveillance Robot Based On IoT",
+    Description: "A robot that can detect metals and objects, controlled by Arduino microcontroller using internet for surveillance purposes.",
+    Img: "https://hackster.imgix.net/uploads/attachments/1478489/fx8-mnk4sto-hd_TKzmvLfKQr.jpg?auto=compress%2Cformat&w=1280&h=960&fit=max",
+    Link: "https://drive.google.com/file/d/1AneQ3H60V0Rta1IyU94G-0sHmpf405r4/view",
+
+    TechStack: ["IDE:Arduino IDE.", "Embedded C", "Wi-Fi module", "Solar panels", "Arduino"],
+    Features: [
+      "A robot to perform the act of surveillance in domestic areas.",
+      "It can be used for the security performance and also speed be increased by using this type of vehicle.",
+      "The purpose of this robot is to roam around and provide audio and video information from the given environment and to send that obtained information to the user.",
+    ]
+  }
   // Add more projects as needed
 ];
 

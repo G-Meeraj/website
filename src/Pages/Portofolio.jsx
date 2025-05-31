@@ -21,51 +21,32 @@ const ToggleButton = ({ onClick, isShowingMore }) => (
   <button
     onClick={onClick}
     className="
-      px-3 py-1.5
-      text-slate-300 
-      hover:text-white 
-      text-sm 
-      font-medium 
+      relative 
+      w-full 
+      py-3 
+      text-center 
+      text-lg 
+      font-bold 
+      text-transparent 
+      bg-clip-text 
+      bg-gradient-to-r 
+      from-[#6366f1] 
+      to-[#a855f7] 
+      hover:from-[#a855f7] 
+      hover:to-[#6366f1] 
+      rounded-lg 
+      shadow-lg 
+      hover:shadow-xl 
       transition-all 
-      duration-300 
-      ease-in-out
-      flex 
-      items-center 
-      gap-2
-      bg-white/5 
-      hover:bg-white/10
-      rounded-md
-      border 
-      border-white/10
-      hover:border-white/20
-      backdrop-blur-sm
-      group
-      relative
+      duration-500 
+      ease-in-out 
+      transform 
+      hover:scale-105 
       overflow-hidden
     "
   >
-    <span className="relative z-10 flex items-center gap-2">
-      {isShowingMore ? "See Less" : "See More"}
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className={`
-          transition-transform 
-          duration-300 
-          ${isShowingMore ? "group-hover:-translate-y-0.5" : "group-hover:translate-y-0.5"}
-        `}
-      >
-        <polyline points={isShowingMore ? "18 15 12 9 6 15" : "6 9 12 15 18 9"}></polyline>
-      </svg>
-    </span>
-    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-500/50 transition-all duration-300 group-hover:w-full"></span>
+    {isShowingMore ? "See Less" : "See More"}
+    <span className="absolute inset-0 rounded-lg border-2 border-transparent before:absolute before:inset-0 before:border-2 before:border-[#6366f1] before:rounded-lg before:opacity-0 before:animate-edge-light"></span>
   </button>
 );
 
@@ -102,22 +83,18 @@ function a11yProps(index) {
 
 const techStacks = [
   { icon: "python.svg", language: "Python" },
-  { icon: "sql.svg", language: "My sql"},
-  { icon: "numpy.svg", language: "NumPy" },
-  { icon: "pandas.svg", language: "Pandas" },
-  { icon: "git.svg", language: "Git" },
-  { icon: "github.svg", language: "Github" },
+  { icon: "machine.svg", language: "M-L" },
+  { icon: "powerbi.svg", language: "Power BI" },
+  { icon: "tableau.svg", language: "Tableau" },
+  { icon: "excel.svg", language: "Excel" },
+  { icon: "sql.svg", language: "My sql" },
   { icon: "mongo.svg", language: "Mongodb" },
-  { icon: "spark.svg", language: "Spark" },
-  { icon: "airflow.svg", language: "Airflow" },
-  { icon: "kafka.svg", language: "Kafka" },
-  { icon: "snowflake.svg", language: "SnowFlake" },
-  { icon: "docker.svg", language: "Docker" },
-  { icon: "kubernetes.svg", language: "Kubernetes" },
-  { icon: "hadoop.svg", language: "Hadoop" },
   { icon: "aws.svg", language: "AWS" },
-  { icon: "azure.svg", language: "Azure" },
-  { icon: "vscode.svg", language: "VSCode" },
+  { icon: "flask.svg", language: "Flask" },
+  { icon: "statistics.svg", language: "Statistics" },
+  { icon: "html.svg", language: "HTML" },
+  { icon: "css.svg", language: "CSS" },
+  
 ];
 
 export default function FullWidthTabs() {
@@ -148,39 +125,17 @@ export default function FullWidthTabs() {
       // Option 1: Use static certificates data
       const staticCertificates = [
         {
-          Img: "/IABACCertificate.jpg"
+          Img: "/Data-science-certification.jpg"
         },
         {
-          Img: "/InternshipCertificate.jpg"
+          Img: "/intenship Certification.jpg"
         },
         {
-          Img: "/PythonCertificate.jpg"
+          Img: "/iabac.jpg"
         },
         {
-          Img: "/NASSCOM_Certificate.jpg"
+          Img: "/Nasscom Certification.jpg"
         },
-        {
-          Img: "/ETLCertificate.jpg"
-        },
-        {
-          Img: "/cloudCertificate.jpg"
-        },
-        {
-          Img: "/NoSQLCertificate.jpg"
-        },
-        {
-          Img: "/RDMSCertificate.jpg"
-        },
-        {
-          Img: "/SQLCertificate.jpg"
-        },
-        {
-          Img: "/TalendCertificate.jpg"
-        },
-        {
-          Img: "/unixCertificate.jpg"
-        },
-        
         // Add more certificates as needed
       ];
       
@@ -210,11 +165,11 @@ export default function FullWidthTabs() {
     }
   }, []);
 
-  const displayedProjects = showAllProjects ? projects : projects.slice(0, initialItems);
+  const displayedProjects = showAllProjects ? projects : projects.slice(0, 3);
   const displayedCertificates = showAllCertificates ? certificates : certificates.slice(0, initialItems);
 
   return (
-    <div className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-[3rem] bg-[#030014] overflow-hidden" id="Portofolio">
+    <div className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-0 bg-[#000000] overflow-hidden" id="Portofolio">
       {/* Header section - unchanged */}
       <div className="text-center pb-10" data-aos="fade-up" data-aos-duration="1000">
         <h2 className="inline-block text-3xl md:text-5xl font-bold text-center mx-auto text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">
@@ -351,8 +306,8 @@ export default function FullWidthTabs() {
                 ))}
               </div>
             </div>
-            {projects.length > initialItems && (
-              <div className="mt-6 w-full flex justify-start">
+            {projects.length > 3 && (
+              <div className="mt-6 w-full flex justify-center overflow-hidden">
                 <ToggleButton
                   onClick={() => toggleShowMore('projects')}
                   isShowingMore={showAllProjects}
@@ -376,7 +331,7 @@ export default function FullWidthTabs() {
               </div>
             </div>
             {certificates.length > initialItems && (
-              <div className="mt-6 w-full flex justify-start">
+              <div className="mt-6 w-full flex justify-center overflow-hidden">
                 <ToggleButton
                   onClick={() => toggleShowMore('certificates')}
                   isShowingMore={showAllCertificates}

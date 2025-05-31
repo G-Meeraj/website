@@ -21,7 +21,7 @@ const Header = memo(() => (
       data-aos-duration="800"
     >
       <Sparkles className="w-5 h-5 text-purple-400" />
-      Building reliable data pipelines that turn chaos into clarity
+      Transforming ideas into digital experiences
       <Sparkles className="w-5 h-5 text-purple-400" />
     </p>
   </div>
@@ -50,7 +50,7 @@ const ProfileImage = memo(() => (
           <div className="absolute inset-0 bg-gradient-to-t from-purple-500/20 via-transparent to-blue-500/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 hidden sm:block" />
           
           <img
-            src="https://i.ibb.co/fdbdxTYY/Black-Shirt-photo.jpg"
+            src="https://i.ibb.co/jkVDjkVf/Profile-picture-1.png"
             alt="Profile"
             className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
             loading="lazy"
@@ -126,7 +126,7 @@ const AboutPage = () => {
     return {
       totalProjects: storedProjects.length,
       totalCertificates: storedCertificates.length,
-      YearExperience: "3.4 Years"
+      YearExperience: experience
     };
   }, []);
 
@@ -186,18 +186,15 @@ const AboutPage = () => {
     const confirmed = window.confirm(`Do you want to download the ${type}?`);
     if (confirmed) {
       const cvLinks = {
-        'Professional Resume': 'https://drive.google.com/file/d/14NG-WkGh6vp418BLMvMhKLbRZtOAFDd7/view?usp=sharing',
-        'ATS Resume': 'https://drive.google.com/file/d/14NG-WkGh6vp418BLMvMhKLbRZtOAFDd7/view?usp=sharing'
+        'Professional Resume': 'https://drive.google.com/file/d/1QQc_NB17aWFEZ8KMKA2w_tT_yxmuVYJW/view?usp=sharing',
+        'ATS Resume': 'https://drive.google.com/file/d/1KYoNAOMuScHUVLiGb1x3g00pMetSMk9l/view?usp=sharing'
       };
       window.open(cvLinks[type], '_blank');
     }
   };
 
   return (
-    <div
-      className="h-auto pb-[10%] text-white overflow-hidden px-[5%] sm:px-[5%] lg:px-[10%] mt-10 sm-mt-0" 
-      id="About"
-    >
+    <div className="h-auto pb-[10%] text-white overflow-hidden px-[5%] sm:px-[5%] lg:px-[10%] mt-0 bg-[#000000]" id="About">
       <Header />
 
       <div className="w-full mx-auto pt-8 sm:pt-12 relative">
@@ -216,7 +213,7 @@ const AboutPage = () => {
                 data-aos="fade-right"
                 data-aos-duration="1300"
               >
-                DWARAKA KALYAN GADDAM
+                Meeraj Ahmad Gonnuru
               </span>
             </h2>
             
@@ -225,45 +222,34 @@ const AboutPage = () => {
               data-aos="fade-right"
               data-aos-duration="1500"
             >
-              I'm a passionate Data Engineer with a strong foundation in Python, SQL, Spark, and Big Data. I specialize in transforming raw datasets into actionable insights using modern data tools and cloud platforms like AWS and Azure. 
+              Aspiring Data Scientist with hands-on experience in developing and deploying machine learning models. Completed an internship at
+Rubixe.com and worked as a full-time employee at Digital Soul Marketing Company.
             </p>
             <p 
               className="text-base sm:text-lg lg:text-xl text-gray-400 leading-relaxed text-justify pb-4 sm:pb-0"
               data-aos="fade-right"
               data-aos-duration="1500"
             >
-              With hands-on experience in building ETL pipelines with Airflow and Spark, I've worked extensively with Hadoop, Kafka, Snowflake, Docker, and Kubernetes—bringing complex business logic to life through efficient SQL and scalable infrastructure.              </p>
+              Demonstrated ability to collaborate across teams, extract insights from large datasets, and deploy ML applications in real-world
+environments, particularly in the healthcare and consulting domains. Experienced in applying machine learning techniques such as
+regression, classification, clustering, and time series forecasting to solve business problems.
+              </p>
 
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">
-              <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
-                <div className="relative group">
-                  <button 
-                    onClick={() => handleCVDownload('Professional Resume')}
-                    data-aos="fade-up"
-                    data-aos-duration="800"
-                    className="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 rounded-lg bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl animate-bounce-slow"
-                  >
-                    <FileText className="w-4 h-4 sm:w-5 sm:h-5" /> Modern CV
-                  </button>
-                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-                    Download my Modern CV
-                  </div>
-                </div>
-                
-                <div className="relative group">
-                  <button 
-                    onClick={() => handleCVDownload('ATS Resume')}
-                    data-aos="fade-up"
-                    data-aos-duration="1000"
-                    className="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 rounded-lg bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl animate-bounce-slow"
-                  >
-                    <FileText className="w-4 h-4 sm:w-5 sm:h-5" /> ATS CV
-                  </button>
-                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-                    Download my ATS-friendly CV
-                  </div>
+              <div className="relative group">
+                <button 
+                  onClick={() => handleCVDownload('ATS Resume')}
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                  className="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 rounded-lg bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl animate-bounce-slow"
+                >
+                  <FileText className="w-4 h-4 sm:w-5 sm:h-5" /> Download Resume
+                </button>
+                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                  Download my ATS-friendly CV
                 </div>
               </div>
+
               <a href="#Portofolio" className="w-full lg:w-auto">
                 <button 
                   data-aos="fade-up"

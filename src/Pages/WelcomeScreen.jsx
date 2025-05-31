@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Code2, Github, Globe, User } from 'lucide-react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import AnimatedBackground from '../components/Background'; // Import AnimatedBackground
 
 const TypewriterEffect = ({ text }) => {
   const [displayText, setDisplayText] = useState('');
@@ -100,6 +101,7 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
           variants={containerVariants}
         >
           <BackgroundEffect />
+          <AnimatedBackground /> {/* Add AnimatedBackground here */}
           
           <div className="relative min-h-screen flex items-center justify-center px-4">
             <div className="w-full max-w-4xl mx-auto">

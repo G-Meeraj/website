@@ -143,18 +143,18 @@ const Home = () => {
 
   // Lottie configuration
   const lottieOptions = {
-    src: "https://lottie.host/58753882-bb6a-49f5-a2c0-950eda1e135a/NLbpVqGegK.lottie",
+    src: "https://lottie.host/51c61e14-3db9-4c47-b69a-5dcf8b0d8827/7XqeKmkj1Y.lottie",
     loop: true,
     autoplay: true,
     rendererSettings: {
       preserveAspectRatio: 'xMidYMid slice',
       progressiveLoad: true,
     },
-    style: { width: "100%", height: "100%" },
+    style: { width: "150%", height: "150%" }, // Increased size
     className: `w-full h-full transition-all duration-500 ${
       isHovering 
-        ? "scale-[180%] sm:scale-[160%] md:scale-[150%] lg:scale-[145%] rotate-2" 
-        : "scale-[175%] sm:scale-[155%] md:scale-[145%] lg:scale-[140%]"
+        ? "scale-[200%] sm:scale-[180%] md:scale-[170%] lg:scale-[160%] rotate-2" 
+        : "scale-[190%] sm:scale-[170%] md:scale-[160%] lg:scale-[150%]"
     }`
   };
 

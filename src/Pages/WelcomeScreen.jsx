@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Code2, Github, Globe, User } from 'lucide-react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import AnimatedBackground from '../components/Background'; // Import AnimatedBackground
 
 const TypewriterEffect = ({ text }) => {
   const [displayText, setDisplayText] = useState('');
@@ -17,7 +16,7 @@ const TypewriterEffect = ({ text }) => {
       } else {
         clearInterval(timer);
       }
-    }, 150); // Reduced interval for faster animation
+    }, 100);
     
     return () => clearInterval(timer);
   }, [text]);
@@ -32,8 +31,8 @@ const TypewriterEffect = ({ text }) => {
 
 const BackgroundEffect = () => (
   <div className="absolute inset-0 overflow-hidden">
-    {/* Solid dark black background */}
-    <div className="absolute inset-0 bg-[#000000]" />
+    <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 blur-3xl animate-pulse" />
+    <div className="absolute inset-0 bg-gradient-to-tr from-indigo-600/10 via-transparent to-purple-600/10 blur-2xl animate-float" />
   </div>
 );
 
@@ -51,8 +50,8 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
 
   useEffect(() => {
     AOS.init({
-      duration: 800, // Increased duration for slower animations
-      once: true, // Ensures animations only happen once
+      duration: 1000,
+      once: false,
       mirror: false,
     });
 
@@ -60,8 +59,9 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
       setIsLoading(false);
       setTimeout(() => {
         onLoadingComplete?.();
-      }, 800); // Increased delay for slower transition
-    }, 2500); // Increased loading time
+      }, 1000);
+    }, 4000);
+    
     return () => clearTimeout(timer);
   }, [onLoadingComplete]);
 
@@ -71,12 +71,12 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
       scale: 1.1,
       filter: "blur(10px)",
       transition: {
-        duration: 0.6, // Increased duration for slower exit animation
+        duration: 0.8,
         ease: "easeInOut",
         when: "beforeChildren",
-        staggerChildren: 0.1, // Increased stagger for slower child animations
-      },
-    },
+        staggerChildren: 0.1
+      }
+    }
   };
 
   const childVariants = {
@@ -84,24 +84,23 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
       y: -20,
       opacity: 0,
       transition: {
-        duration: 0.4, // Increased duration for slower child exit animation
-        ease: "easeInOut",
-      },
-    },
+        duration: 0.4,
+        ease: "easeInOut"
+      }
+    }
   };
 
   return (
     <AnimatePresence>
       {isLoading && (
         <motion.div
-          className="fixed inset-0 bg-[#000000]" // Solid dark black background
+          className="fixed inset-0 bg-[#030014]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit="exit"
           variants={containerVariants}
         >
           <BackgroundEffect />
-          <AnimatedBackground /> {/* Add AnimatedBackground here */}
           
           <div className="relative min-h-screen flex items-center justify-center px-4">
             <div className="w-full max-w-4xl mx-auto">
@@ -153,7 +152,7 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
                 data-aos-delay="1200"
               >
                 <a
-                  href="https://meeraj-portfolio.netlify.app/"
+                  href="https://Dwaraka-kalyan-portfolio.netlify.app/"
                   className="inline-flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-3 rounded-full relative group hover:scale-105 transition-transform duration-300"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -162,7 +161,7 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
                   <div className="relative flex items-center gap-2 text-lg sm:text-xl md:text-2xl">
                     <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-600" />
                     <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                      <TypewriterEffect text="www.meeraj-portfolio.com" />
+                      <TypewriterEffect text="www.DwarakaKalyan-portfolio.com" />
                     </span>
                   </div>
                 </a>

@@ -13,7 +13,7 @@ const socialLinks = [
     displayName: "Let's Connect",
     subText: "on LinkedIn",
     icon: Linkedin,
-    url: "https://www.linkedin.com/in/meeraj-datascientist/",
+    url: "http://linkedin.com/in/dwaraka-kalyan-data-engineer",
     color: "#0A66C2",
     gradient: "from-[#0A66C2] to-[#0077B5]",
     isPrimary: true
@@ -21,40 +21,40 @@ const socialLinks = [
   {
     name: "Instagram",
     displayName: "Instagram",
-    subText: "@_m_e_e_r_a_j",
+    subText: "@DwarakaKalyan",
     icon: Instagram,
-    url: "https://www.instagram.com/_m_e_e_r_a_j?igsh=ajI2eHJhdjgybXc5",
+    url: "https://www.instagram.com/dwaraka/",
     color: "#E4405F",
     gradient: "from-[#833AB4] via-[#E4405F] to-[#FCAF45]"
   },
   {
     name: "YouTube",
     displayName: "Youtube",
-    subText: "@KOlamax7845",
+    subText: "@DwarakaKalyan",
     icon: Youtube,
-    url: "https://www.youtube.com/@kolamax7845",
+    url: "https://www.youtube.com/@Dwaraka-h6l",
     color: "#FF0000",
     gradient: "from-[#FF0000] to-[#CC0000]"
   },
   {
     name: "GitHub",
     displayName: "Github",
-    subText: "@G-Meeraj",
+    subText: "@DwarakaKalyan7",
     icon: Github,
-    url: "https://github.com/G-Meeraj",
+    url: "https://github.com/Dwarakakalyan7",
     color: "#ffffff",
     gradient: "from-[#333] to-[#24292e]"
   },
   {
     name: "Discord",  
     displayName: "Discord",
-    subText: "@meeraj",
+    subText: "@Dwaraka",
     icon: ({ className, ...props }) => (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24px" height="24px" {...props}>
         <path d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"/>
       </svg>
     ),
-    url: "https://discord.com/842143507073335306",
+    url: "https://discord.com/123456789",
     color: "#5865F2", // Discord's brand color
     gradient: "from-[#5865F2] to-[#7289DA]" // Discord color gradient
   }

@@ -58,9 +58,6 @@ const ContactPage = () => {
         confirmButtonColor: '#6366f1',
         timer: 2000,
         timerProgressBar: true
-      }).then(() => {
-        // Redirect after success
-        window.location.href = "https://meeraj-portfolio.netlify.app/";
       });
 
       // Reset form
@@ -112,7 +109,7 @@ const ContactPage = () => {
       </div>
 
       <div
-        className="h-auto py-10 flex items-center justify-center px-[5%] md:px-0 bg-[#000000]" // Consistent background color
+        className="h-auto py-10 flex items-center justify-center px-[5%] md:px-0"
         id="Contact"
       >
         <div className="container px-[1%] grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-[45%_55%] 2xl:grid-cols-[35%_65%] gap-12">
@@ -130,28 +127,11 @@ const ContactPage = () => {
                   Have something to discuss? Send me a message and let's talk.
                 </p>
               </div>
-              <button
-                onClick={() => {
-                  if (navigator.share) {
-                    navigator.share({
-                      title: "Meeraj Portfolio",
-                      text: "Check out this amazing portfolio!",
-                      url: "https://meeraj-portfolio.netlify.app/",
-                    })
-                    .then(() => console.log("Shared successfully"))
-                    .catch((error) => console.error("Error sharing:", error));
-                  } else {
-                    alert("Sharing is not supported on this browser.");
-                  }
-                }}
-                className="w-10 h-10 text-[#6366f1] opacity-50 hover:opacity-100 transition-opacity"
-              >
-                <Share2 />
-              </button>
+              <Share2 className="w-10 h-10 text-[#6366f1] opacity-50" />
             </div>
 
             <form 
-              action="https://formsubmit.co/meerajahmadgonnuru@gmail.com"
+              action="https://formsubmit.co/dwarakakalyan7@gmail.com"
               method="POST"
               onSubmit={handleSubmit}
               className="space-y-6"

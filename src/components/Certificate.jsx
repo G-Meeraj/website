@@ -1,8 +1,7 @@
 import React, { useState } from "react"
-import { Modal, IconButton, Box, Typography, Button } from "@mui/material"
+import { Modal, IconButton, Box, Fade, Backdrop, Zoom, Typography } from "@mui/material"
 import CloseIcon from "@mui/icons-material/Close"
 import FullscreenIcon from "@mui/icons-material/Fullscreen"
-import DownloadIcon from "@mui/icons-material/Download"
 
 const Certificate = ({ ImgSertif, title, issuer, date, description }) => {
 	const [open, setOpen] = useState(false)
@@ -15,17 +14,11 @@ const Certificate = ({ ImgSertif, title, issuer, date, description }) => {
 		setOpen(false)
 	}
 
-	const handleDownload = () => {
-		const link = document.createElement("a")
-		link.href = ImgSertif
-		link.download = `${title || "Certificate"}.jpg` // Default filename
-		link.click()
-	}
-
 	return (
 		<Box component="div" sx={{ width: "100%" }}>
 			{/* Thumbnail Container */}
 			<Box
+				className=""
 				sx={{
 					position: "relative",
 					overflow: "hidden",
@@ -35,19 +28,95 @@ const Certificate = ({ ImgSertif, title, issuer, date, description }) => {
 					"&:hover": {
 						transform: "translateY(-5px)",
 						boxShadow: "0 12px 24px rgba(0,0,0,0.2)",
+						"& .overlay": {
+							opacity: 1,
+						},
+						"& .hover-content": {
+							transform: "translate(-50%, -50%)",
+							opacity: 1,
+						},
+						"& .certificate-image": {
+							filter: "contrast(1.05) brightness(1) saturate(1.1)",
+						},
 					},
 				}}>
-				<img
-					src={ImgSertif}
-					alt={title || "Certificate"}
-					style={{
-						width: "100%",
-						height: "auto",
-						display: "block",
-						objectFit: "cover",
+				{/* Certificate Image with Initial Filter */}
+				<Box
+					sx={{
+						position: "relative",
+						"&::before": {
+							content: '""',
+							position: "absolute",
+							top: 0,
+							left: 0,
+							right: 0,
+							bottom: 0,
+							backgroundColor: "rgba(0, 0, 0, 0.1)",
+							zIndex: 1,
+						},
+					}}>
+					<img
+						className="certificate-image"
+						src={ImgSertif}
+						alt={title || "Certificate"}
+						style={{
+							width: "100%",
+							height: "auto",
+							display: "block",
+							objectFit: "cover",
+							filter: "contrast(1.10) brightness(0.9) saturate(1.1)",
+							transition: "filter 0.3s ease",
+						}}
+						onClick={handleOpen}
+					/>
+				</Box>
+
+				{/* Hover Overlay */}
+				<Box
+					className="overlay"
+					sx={{
+						position: "absolute",
+						top: 0,
+						left: 0,
+						right: 0,
+						bottom: 0,
+						opacity: 0,
+						transition: "all 0.3s ease",
+						cursor: "pointer",
+						zIndex: 2,
 					}}
-					onClick={handleOpen}
-				/>
+					onClick={handleOpen}>
+					{/* Hover Content */}
+					<Box
+						className="hover-content"
+						sx={{
+							position: "absolute",
+							top: "50%",
+							left: "50%",
+							transform: "translate(-50%, -60%)",
+							opacity: 0,
+							transition: "all 0.4s ease",
+							textAlign: "center",
+							width: "100%",
+							color: "white",
+						}}>
+						<FullscreenIcon
+							sx={{
+								fontSize: 40,
+								mb: 1,
+								filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.2))",
+							}}
+						/>
+						<Typography
+							variant="h6"
+							sx={{
+								fontWeight: 600,
+								textShadow: "0 2px 4px rgba(0,0,0,0.3)",
+							}}>
+							View Certificate
+						</Typography>
+					</Box>
+				</Box>
 			</Box>
 
 			{/* Certificate Info */}
@@ -73,10 +142,23 @@ const Certificate = ({ ImgSertif, title, issuer, date, description }) => {
 				onClose={handleClose}
 				aria-labelledby="modal-modal-title"
 				aria-describedby="modal-modal-description"
+				BackdropComponent={Backdrop}
+				BackdropProps={{
+					timeout: 300,
+					sx: {
+						backgroundColor: "rgba(0, 0, 0, 0.9)",
+						backdropFilter: "blur(5px)",
+					},
+				}}
 				sx={{
 					display: "flex",
 					alignItems: "center",
 					justifyContent: "center",
+					margin: 0,
+					padding: 0,
+					"& .MuiBackdrop-root": {
+						backgroundColor: "rgba(0, 0, 0, 0.9)",
+					},
 				}}>
 				<Box
 					sx={{
@@ -84,7 +166,12 @@ const Certificate = ({ ImgSertif, title, issuer, date, description }) => {
 						width: "auto",
 						maxWidth: "90vw",
 						maxHeight: "90vh",
+						m: 0,
+						p: 0,
 						outline: "none",
+						"&:focus": {
+							outline: "none",
+						},
 					}}>
 					{/* Close Button */}
 					<IconButton
@@ -94,12 +181,16 @@ const Certificate = ({ ImgSertif, title, issuer, date, description }) => {
 							right: 16,
 							top: 16,
 							color: "white",
-							backgroundColor: "rgba(0,0,0,0.6)",
+							bgcolor: "rgba(0,0,0,0.6)",
+							zIndex: 1,
+							padding: 1,
 							"&:hover": {
-								backgroundColor: "rgba(0,0,0,0.8)",
+								bgcolor: "rgba(0,0,0,0.8)",
+								transform: "scale(1.1)",
 							},
-						}}>
-						<CloseIcon />
+						}}
+						size="large">
+						<CloseIcon sx={{ fontSize: 24 }} />
 					</IconButton>
 
 					{/* Modal Image */}
@@ -114,37 +205,26 @@ const Certificate = ({ ImgSertif, title, issuer, date, description }) => {
 							objectFit: "contain",
 						}}
 					/>
-
-					{/* Download Button */}
-					<Box
-						sx={{
-							position: "absolute",
-							bottom: 16,
-							left: "50%",
-							transform: "translateX(-50%)",
-							textAlign: "center",
+					
+					{/* Certificate Details */}
+					{description && (
+						<Box sx={{ 
+							mt: 2, 
+							p: 2, 
+							backgroundColor: "rgba(0,0,0,0.7)",
+							borderRadius: 1
 						}}>
-						<Button
-							variant="outlined"
-							startIcon={<DownloadIcon />}
-							onClick={handleDownload}
-							sx={{
-								backgroundColor: "rgba(0, 0, 0, 0.8)", // Dark black transparent background
-								color: "white", // White text
-								border: "1px solid rgba(139, 92, 246, 0.3)", // Light purple border
-								borderRadius: "24px", // Rounded corners
-								padding: "8px 16px", // Button padding
-								backdropFilter: "blur(10px)", // Blur effect for transparency
-								transition: "all 0.3s ease",
-								"&:hover": {
-									backgroundColor: "rgba(0, 0, 0, 1)", // Fully black on hover
-									color: "white", // Ensure text remains white on hover
-									borderColor: "rgba(139, 92, 246, 0.5)", // Darker purple border on hover
-								},
-							}}>
-							Download
-						</Button>
-					</Box>
+							<Typography variant="h6" sx={{ color: "white", mb: 1 }}>
+								{title}
+							</Typography>
+							<Typography variant="body1" sx={{ color: "white", mb: 1 }}>
+								{issuer} • {date}
+							</Typography>
+							<Typography variant="body2" sx={{ color: "rgba(255,255,255,0.8)" }}>
+								{description}
+							</Typography>
+						</Box>
+					)}
 				</Box>
 			</Modal>
 		</Box>

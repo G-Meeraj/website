@@ -53,6 +53,7 @@ const ProfileImage = memo(() => (
             src="https://i.ibb.co/4w7h4sRr/cropped-circle-image.png"
             alt="Profile"
             className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
+            style={{ filter: "brightness(0.8)" }}
             loading="lazy"
           />
 

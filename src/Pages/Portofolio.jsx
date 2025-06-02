@@ -83,17 +83,23 @@ function a11yProps(index) {
 
 const techStacks = [
   { icon: "python.svg", language: "Python" },
+  { icon: "numpy.svg", language: "NumPy" },
+  { icon: "pandas.svg", language: "Pandas" },
   { icon: "machine.svg", language: "M-L" },
+  { icon: "deep.svg", language: "DeepLearning" },
   { icon: "powerbi.svg", language: "Power BI" },
   { icon: "tableau.svg", language: "Tableau" },
   { icon: "excel.svg", language: "Excel" },
   { icon: "sql.svg", language: "My sql" },
   { icon: "mongo.svg", language: "Mongodb" },
+  { icon: "git.svg", language: "Git" },
+  { icon: "github.svg", language: "Github" },
   { icon: "aws.svg", language: "AWS" },
   { icon: "flask.svg", language: "Flask" },
   { icon: "statistics.svg", language: "Statistics" },
   { icon: "html.svg", language: "HTML" },
   { icon: "css.svg", language: "CSS" },
+  { icon: "vscode.svg", language: "VSCode" },
   
 ];
 
@@ -165,7 +171,7 @@ export default function FullWidthTabs() {
     }
   }, []);
 
-  const displayedProjects = showAllProjects ? projects : projects.slice(0, 3);
+  const displayedProjects = showAllProjects ? projects : projects.slice(0, 4);
   const displayedCertificates = showAllCertificates ? certificates : certificates.slice(0, initialItems);
 
   return (
@@ -306,7 +312,7 @@ export default function FullWidthTabs() {
                 ))}
               </div>
             </div>
-            {projects.length > 3 && (
+            {projects.length > 4 && (
               <div className="mt-6 w-full flex justify-center overflow-hidden">
                 <ToggleButton
                   onClick={() => toggleShowMore('projects')}

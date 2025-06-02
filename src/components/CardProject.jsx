@@ -21,24 +21,28 @@ const CardProject = ({ Img, Title, Description, Link: ProjectLink, id, className
   };
 
   return (
-    <div className={`h-full flex flex-col bg-[#01016] rounded-lg border border-[#1E2B3B] 
+    <div className={`h-full flex flex-col bg-[#01016] rounded-2xl border border-[#1E2B3B] 
                      hover:border-[#6366f1]/40 transition-colors duration-700 ${className}`}>
-      {/* Image container with fixed aspect ratio */}
-      <div className="relative pt-[56.25%]"> {/* 16:9 aspect ratio */}
+      {/* Image container with reduced aspect ratio */}
+      <div className="relative pt-[45%] rounded-t-2xl overflow-hidden"> {/* Changed from 56.25% to 45% */}
         <img
           src={Img}
           alt={Title}
-          className="absolute top-0 left-0 w-full h-full object-cover rounded-t-lg"
+          className="absolute top-0 left-0 w-full h-full object-cover rounded-t-2xl"
         />
       </div>
       
-      {/* Content container */}
+      {/* Content container with reduced padding */}
       <div className="flex flex-col flex-grow p-2">
-        <h3 className="text-lg font-semibold text-gray-200 mb-4">{Title}</h3>
-        <p className="text-sm text-gray-400 mb-2 flex-grow">{Description}</p>
+        <h3 className="text-lg font-semibold text-gray-200 mb-2">{/* Reduced mb-4 to mb-2 */}
+          {Title}
+        </h3>
+        <p className="text-sm text-gray-400 mb-1 flex-grow line-clamp-2">{/* Added line-clamp-2 and reduced mb-2 to mb-1 */}
+          {Description}
+        </p>
         
-        {/* Button container - stays at bottom */}
-        <div className="mt-auto pt-4">
+        {/* Button container with reduced padding */}
+        <div className="mt-auto pt-2">{/* Reduced pt-4 to pt-2 */}
           <div className="flex items-center justify-between">
             {ProjectLink ? (
               <a

@@ -8,7 +8,7 @@ const TechStackIcon = ({ TechStackIcon, Language }) => {
         <img 
           src={TechStackIcon} 
           alt={`${Language} icon`} 
-          className="relative h-16 w-16 md:h-30 md:w-30 transform transition-transform duration-300"
+          className="relative h-16 w-16 md:h-14 md:w-34 transform transition-transform duration-300"
         />
       </div>
       <span className="text-slate-300 font-semibold text-sm md:text-base tracking-wide group-hover:text-white transition-colors duration-300">
@@ -18,4 +18,4 @@ const TechStackIcon = ({ TechStackIcon, Language }) => {
   );
 };
 
-export default TechStackIcon; 
+export default TechStackIcon;

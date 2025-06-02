@@ -1,0 +1,2 @@
+// Example usage in a component
+<span className="animate-butter-smooth">Butter Smooth!</span>

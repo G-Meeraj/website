@@ -30,6 +30,35 @@ const getInitialComments = () => {
             userName: 'John Smith',
             profileImage: null,
             createdAt: new Date('2025-04-15T15:45:00')
+        },
+        // --- AI generated comments below ---
+        {
+            id: '3',
+            content: 'The animations and transitions are so smooth. Really professional feel!',
+            userName: 'AI Reviewer',
+            profileImage: 'https://randomuser.me/api/portraits/men/32.jpg',
+            createdAt: new Date('2025-04-14T12:10:00')
+        },
+        {
+            id: '4',
+            content: 'Impressed by the responsiveness. Looks great on both desktop and mobile!',
+            userName: 'WebBot',
+            profileImage: 'https://randomuser.me/api/portraits/men/99.jpg',
+            createdAt: new Date('2025-04-13T09:25:00')
+        },
+        {
+            id: '5',
+            content: 'Your About section tells a great story. Well done!',
+            userName: 'AI Critic',
+            profileImage: 'https://randomuser.me/api/portraits/women/65.jpg',
+            createdAt: new Date('2025-04-12T18:40:00')
+        },
+        {
+            id: '6',
+            content: 'Navigation is intuitive and user-friendly. Keep up the awesome work!',
+            userName: 'UX Bot',
+            profileImage: null,
+            createdAt: new Date('2025-04-11T14:00:00')
         }
     ];
 };

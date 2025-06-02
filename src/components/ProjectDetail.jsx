@@ -10,12 +10,12 @@ import Swal from 'sweetalert2';
 export const PROJECTS_DATA = [
   {
     id: 1,
-    Title: "Health care Chatbot",
+    Title: "Health care Chatbot Application",
     Description: "A healthcare chatbot project aims to develop an AI-powered virtual assistant that provides patients with convenient access to medical information, symptom analysis, and guidance.",
-    Img: "https://miro.medium.com/v2/resize:fit:1400/1*KT-dZRwMOA1KuTzVOomxHw.gif",
-    Link: "http://www.linkedin.com/in/meeraj-ahmad-gonnuru-406ab2330",
+    Img: "https://i.pinimg.com/originals/9a/dd/6e/9add6eae4968b1c404f69a383177f249.png",
+    Link: "http://www.linkedin.com/in/meeraj-datascientist",
     Github: "https://github.com/G-Meeraj/Health-Care-Chatbot",
-    TechStack: ["Python", "Machine Learning", "Flask","Html","Css","OpenAI","React"],
+    TechStack: ["Python","Scikit-Learn","Numpy","Pandas","Matplotlib & Seaborn", "Machine Learning algorithm", "Flask","Html","Css","JavaScript","Open AI"],
     Features: [
       "Users can input symptoms to receive possible disease predictions.",
       "The healthcare chatbot uses machine learning models to predict diseases based on user-reported symptoms, providing personalized healthcare advice and guidance.",
@@ -25,60 +25,42 @@ export const PROJECTS_DATA = [
   },
   {
     id: 2,
-    Title: "Heart Disease Prediction",
-    Description: "This project is a Heart Disease Prediction web application built using Flask and Machine Learning. The model predicts the likelihood of a person having heart disease based on various input parameters.",
-    Img: "https://media.licdn.com/dms/image/v2/D5622AQEvzdaHJ0oXkw/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1707987384761?e=2147483647&v=beta&t=fO8P09T0lXA_N1e5jtVTk1QGuaPPzy7SUES3vP1Z6aU",
-    Link: "https://www.linkedin.com/posts/meeraj-ahmad-gonnuru-406ab2330_machinelearning-heartdiseaseprediction-aiinhealthcare-activity-7316398949693624322-AWjy?utm_source=share&utm_medium=member_android&rcm=ACoAAFN0wsYBDwo8yxAlkBL7UcKD71I-blOj5yo",
-    Github: "https://github.com/G-Meeraj/Heart-Disease-Prediction",
-    TechStack: ["Python", "Machine Learning", "Flask","Html","Css"],
+    Title: "Sales Effectiveness",
+    Description: "The project is focused on improving sales effectiveness for FicZon Inc, a company providing IT solutions including SaaS products. Facing a decline in sales due to market competition and manual lead classification, FicZon aims to implement a machine learning (ML) model to automate and improve lead quality categorization. The expected outcome is better prioritization of leads (High vs. Low potential) and overall improvement in sales performance.",
+    Img: "https://lh6.googleusercontent.com/HYMe9VRaA1aOGaK-tu31DVtvuKt5N8LCTuOIJLoR-AH4yvVv6Pd3YiyUJylYKTzNwMqrfee5uKta7XbdvirC5cUOWmyhA93e41scdOsUhLJOd1lL6ByLne58lzq4WGHMX6l6Juih",
+    Link: "http://www.linkedin.com/in/meeraj-datascientist",
+    Github: "https://github.com/G-Meeraj/Sales-Effectiveness",
+    TechStack: ["Python","Scikit-Learn","Numpy","Pandas","Matplotlib & Seaborn","MYSQL", "Machine Learning algorithm","Classification algorithms", "Flask","Html","Css","JavaScript","Open AI"],
     Features: [
-      "Easy-to-use web form for inputting health metrics",
-      "Machine learning model predicts likelihood of heart disease",
-      "Provides heart health tips based on prediction",
-      "Clean, healthcare-themed interface (customizable with HTML/CSS)",
+      "Automated Lead Categorization: Predict whether a lead is High Potential or Low Potential using ML.",
+      "Exploratory Data Analysis (EDA): Insights into factors affecting sales effectiveness.",
+      "Sales Data Utilization: Use historical sales and lead data with features like product, source, location, etc.",
+      "Database-Driven Approach: Connects to a live database (project_sales) for real-time or periodic data updates."
     ]
   },
   {
     id: 3,
-    Title: "Flight Fare Prediction",
-    Description: "This project is a Flight Price Prediction web application built using Flask and Machine Learning. The model predicts the price of flight tickets based on various input parameters.",
-    Img: "https://miro.medium.com/v2/resize:fit:1400/0*3_PnJ1Bt1tVJ8Ssd.gif",
-    Link: "https://www.linkedin.com/posts/meeraj-ahmad-gonnuru-406ab2330_machinelearning-flask-internshipproject-activity-7317452566433267713-Kubj?utm_source=share&utm_medium=member_android&rcm=ACoAAFN0wsYBDwo8yxAlkBL7UcKD71I-blOj5yo",
-    Github: "https://github.com/G-Meeraj/Flight-Price-Prediction",
-    TechStack: ["Python", "Machine Learning", "Flask","Html","Css"],
+    Title: "Employee-Performance-Analysis--INX-Future-Inc",
+    Description: "This project analyzes employee performance data from INX Future Inc to uncover key factors affecting performance ratings. The goal is to predict employee performance and recommend improvements based on data-driven insights.",
+    Img: "https://hospitalityinsights.ehl.edu/hubfs/employee-performance-improvement.jpeg",
+    Link: "https://www.linkedin.com/in/meeraj-datascientist/",
+    Github: "https://github.com/G-Meeraj/G-Meeraj-Bike-Rental-Prediction-",
+    TechStack: ["Python","Scikit-Learn","Numpy","Pandas","Matplotlib & Seaborn", "Machine Learning algorithm"],
     Features: [
-      "Predicts flight ticket prices based on user inputs.",
-      "PUtilizes a trained Machine Learning model.",
-      "SFlask-based web application with an interactive frontend.",
-      "Supports categorical data encoding for better predictions.",
-      "Simple and easy-to-use interface."
+      "The dataset includes both numerical (e.g., Age, DistanceFromHome) and categorical (e.g., Gender, EducationBackground) features.",
+      "Label Encoding is applied to convert categorical variables into numeric format.",
+      "The target variable is Performance Rating, categorized as 2, 3, or 4 — making it a classification problem.",
+      "Models used include Random Forest and Decision Tree, with feature importance to identify top performance influencers.",
     ]
   },
   {
     id: 4,
-    Title: "Health Insurance Prediction",
-    Description: "This project aims to build a web-based application that predicts individual health insurance costs based on user input using a trained machine learning model. The model considers various features such as age, gender, BMI, smoking status, and region to provide an estimated insurance premium.",
-    Img: "https://user-images.githubusercontent.com/91398845/207703224-2d95afc5-b18b-4323-8e39-1d1dab8e95b9.png",
-    Link: "https://www.linkedin.com/posts/meeraj-ahmad-gonnuru-406ab2330_machinelearning-flask-datascience-activity-7318901786726027266-hAtj?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFN0wsYBDwo8yxAlkBL7UcKD71I-blOj5yo",
-    Github: "https://github.com/G-Meeraj/Health-Insurance-Prediction",
-    TechStack: ["Python", "Machine Learning", "Flask","Html","Css"],
-    Features: [
-      "Predicts Health Insurance Prediction based on user inputs.",
-      "PUtilizes a trained Machine Learning model",
-      "SFlask-based web application with an interactive frontend.",
-      "Supports categorical data encoding for better predictions.",
-      "Simple and easy-to-use interface."
-    ]
-  },
-  
-  {
-    id: 5,
     Title: "Bike rental",
     Description: "The goal of this project is to develop a machine learning model that accurately predicts the number of bikes rented on a given day based on various environmental and seasonal factors. This can help bike rental companies optimize inventory, staffing, and maintenance schedules.",
     Img: "https://d36g7qg6pk2cm7.cloudfront.net/assets/long_term/desktop/rbx_banner-a8582ea39f40667b3c94a9bc269a69effb6be8ce78f2f7c6aab995f51469c6c9.webp",
-    Link: "http://www.linkedin.com/in/meeraj-ahmad-gonnuru-406ab2330",
+    Link: "https://www.linkedin.com/in/meeraj-datascientist/",
     Github: "https://github.com/G-Meeraj/G-Meeraj-Bike-Rental-Prediction-",
-    TechStack: ["Python", "Machine Learning", "Flask","Html","Css"],
+    TechStack: ["Python","Scikit-Learn","Numpy","Pandas","Matplotlib & Seaborn", "Machine Learning algorithm", "Flask","Html","Css"],
     Features: [
       "Predicts Bike rental based on user inputs.",
       "PUtilizes a trained Machine Learning model",
@@ -88,10 +70,60 @@ export const PROJECTS_DATA = [
     ]
   },
   {
+    id: 5,
+    Title: "Heart Disease Prediction",
+    Description: "This project is a Heart Disease Prediction web application built using Flask and Machine Learning. The model predicts the likelihood of a person having heart disease based on various input parameters.",
+    Img: "https://images.ctfassets.net/yixw23k2v6vo/4HAUBtsZHw8juPnP323jlB/deac4cb55518ac5a17889b3369e7b99e/iStock-1204704312.jpg",
+    Link: "https://www.linkedin.com/posts/meeraj-datascientist_machinelearning-heartdiseaseprediction-aiinhealthcare-activity-7316398949693624322-V98u/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFN0wsYBDwo8yxAlkBL7UcKD71I-blOj5yo",
+    Github: "https://github.com/G-Meeraj/Heart-Disease-Prediction",
+    TechStack: ["Python","Scikit-Learn","Numpy","Pandas","Matplotlib & Seaborn", "Machine Learning algorithm", "Flask","Html","Css"],
+    Features: [
+      "Easy-to-use web form for inputting health metrics",
+      "Machine learning model predicts likelihood of heart disease",
+      "Provides heart health tips based on prediction",
+      "Clean, healthcare-themed interface (customizable with HTML/CSS)",
+    ]
+  },
+  {
     id: 6,
+    Title: "Flight Fare Prediction",
+    Description: "This project is a Flight Price Prediction web application built using Flask and Machine Learning. The model predicts the price of flight tickets based on various input parameters.",
+    Img: "https://cdn.mos.cms.futurecdn.net/EdnKq6nCjF6aHbAVXpyjaf.jpg",
+    Link: "https://www.linkedin.com/posts/meeraj-datascientist_machinelearning-flask-internshipproject-activity-7317452566433267713-zGsx?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFN0wsYBDwo8yxAlkBL7UcKD71I-blOj5yo",
+    Github: "https://github.com/G-Meeraj/Flight-Price-Prediction",
+    TechStack: ["Python","Scikit-Learn","Numpy","Pandas","Matplotlib & Seaborn", "Machine Learning algorithm", "Flask","Html","Css"],
+    Features: [
+      "Predicts flight ticket prices based on user inputs.",
+      "PUtilizes a trained Machine Learning model.",
+      "SFlask-based web application with an interactive frontend.",
+      "Supports categorical data encoding for better predictions.",
+      "Simple and easy-to-use interface."
+    ]
+  },
+  {
+    id: 7,
+    Title: "Health Insurance Prediction",
+    Description: "This project aims to build a web-based application that predicts individual health insurance costs based on user input using a trained machine learning model. The model considers various features such as age, gender, BMI, smoking status, and region to provide an estimated insurance premium.",
+    Img: "https://www.obamacareus.com/wp-content/uploads/2022/08/obamacareus1.jpg",
+    Link: "https://www.linkedin.com/posts/meeraj-datascientist_machinelearning-flask-datascience-activity-7318901786726027266-EvHv?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFN0wsYBDwo8yxAlkBL7UcKD71I-blOj5yo",
+    Github: "https://github.com/G-Meeraj/Health-Insurance-Prediction",
+    TechStack: ["Python","Scikit-Learn","Numpy","Pandas","Matplotlib & Seaborn", "Machine Learning algorithm", "Flask","Html","Css"],
+    Features: [
+      "Predicts Health Insurance Prediction based on user inputs.",
+      "PUtilizes a trained Machine Learning model",
+      "SFlask-based web application with an interactive frontend.",
+      "Supports categorical data encoding for better predictions.",
+      "Simple and easy-to-use interface."
+    ]
+  },
+  
+  
+  
+  {
+    id: 8,
     Title: "Surveillance Robot Based On IoT",
     Description: "A robot that can detect metals and objects, controlled by Arduino microcontroller using internet for surveillance purposes.",
-    Img: "https://hackster.imgix.net/uploads/attachments/1478489/fx8-mnk4sto-hd_TKzmvLfKQr.jpg?auto=compress%2Cformat&w=1280&h=960&fit=max",
+    Img: "https://s3-ap-southeast-1.amazonaws.com/assets.skyfilabs.com/images/blog/surveillance-robot.jpg",
     Link: "https://drive.google.com/file/d/1AneQ3H60V0Rta1IyU94G-0sHmpf405r4/view",
 
     TechStack: ["IDE:Arduino IDE.", "Embedded C", "Wi-Fi module", "Solar panels", "Arduino"],

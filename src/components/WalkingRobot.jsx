@@ -238,6 +238,13 @@ const WalkingRobot = () => {
   const longPressTimer = useRef(null);
 
   useEffect(() => {
+    // Detect mobile device
+    const isMobile = /Mobi|Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+    if (isMobile) {
+      setShowRobot(false);
+      return; // Don't run the rest of the effect on mobile
+    }
+
     if (isDead) return;
 
     const moveRobotRandomly = () => {

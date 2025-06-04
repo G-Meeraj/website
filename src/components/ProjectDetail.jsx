@@ -27,7 +27,7 @@ export const PROJECTS_DATA = [
     id: 2,
     Title: "Sales Effectiveness",
     Description: "The project is focused on improving sales effectiveness for FicZon Inc, a company providing IT solutions including SaaS products. Facing a decline in sales due to market competition and manual lead classification, FicZon aims to implement a machine learning (ML) model to automate and improve lead quality categorization. The expected outcome is better prioritization of leads (High vs. Low potential) and overall improvement in sales performance.",
-    Img: "https://lh6.googleusercontent.com/HYMe9VRaA1aOGaK-tu31DVtvuKt5N8LCTuOIJLoR-AH4yvVv6Pd3YiyUJylYKTzNwMqrfee5uKta7XbdvirC5cUOWmyhA93e41scdOsUhLJOd1lL6ByLne58lzq4WGHMX6l6Juih",
+    Img: "https://krispcall.com/blog/wp-content/uploads/2024/07/How-to-improve-sales-force-effectiveness.webp",
     Link: "http://www.linkedin.com/in/meeraj-datascientist",
     Github: "https://github.com/G-Meeraj/Sales-Effectiveness",
     TechStack: ["Python","Scikit-Learn","Numpy","Pandas","Matplotlib & Seaborn","MYSQL", "Machine Learning algorithm","Classification algorithms", "Flask","Html","Css","JavaScript","Open AI"],

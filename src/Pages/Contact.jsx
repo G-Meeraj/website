@@ -127,7 +127,22 @@ const ContactPage = () => {
                   Have something to discuss? Send me a message and let's talk.
                 </p>
               </div>
-              <Share2 className="w-10 h-10 text-[#6366f1] opacity-50" />
+              <button
+                onClick={() => {
+                  if (navigator.share) {
+                    navigator.share({
+                      title: "Meeraj Portfolio",
+                      text: "Check out this amazing portfolio!",
+                      url: window.location.href,
+                    }).catch((error) => console.error("Error sharing:", error));
+                  } else {
+                    alert("Sharing is not supported in your browser.");
+                  }
+                }}
+                className="w-10 h-10 text-[#6366f1] opacity-50 hover:opacity-100 transition-opacity"
+              >
+                <Share2 className="w-full h-full" />
+              </button>
             </div>
 
             <form 

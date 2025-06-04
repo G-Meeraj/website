@@ -154,6 +154,7 @@ const Home = () => {
   const [charIndex, setCharIndex] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
   const [isHovering, setIsHovering] = useState(false)
+  const [showRobot, setShowRobot] = useState(false); // Add this state
 
   // Optimize AOS initialization
   useEffect(() => {
@@ -222,7 +223,8 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-[#000000] overflow-hidden" id="Home">
-      <WalkingRobot />
+      {/* Show WalkingRobot only if showRobot is true */}
+      {showRobot && <WalkingRobot />}
       <div className="animate-butter-smooth">
         <div className={`relative z-10 transition-all duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
           <div className="container mx-auto px-[5%] sm:px-6 lg:px-[0%] min-h-screen">
@@ -276,6 +278,28 @@ const Home = () => {
                   <div className="flex flex-row gap-3 w-full justify-start" data-aos="fade-up" data-aos-delay="1400">
                     <CTAButton href="#Portofolio" text="Projects" icon={ExternalLink} />
                     <CTAButton href="#Contact" text="Contact" icon={Mail} />
+                    {/* Walking Robot Button */}
+                    <button
+                      className="group relative w-[160px]"
+                      onClick={() => setShowRobot((prev) => !prev)}
+                      type="button"
+                    >
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-xl opacity-50 blur-md group-hover:opacity-90 transition-all duration-700"></div>
+                      <div className="relative h-11 bg-[#030014] backdrop-blur-xl rounded-lg border border-white/10 leading-none overflow-hidden">
+                        <div className="absolute inset-0 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 bg-gradient-to-r from-[#6366f1]/20 to-[#a855f7]/20"></div>
+                        <span className="absolute inset-0 flex items-center justify-center gap-2 text-sm group-hover:gap-3 transition-all duration-300">
+                          <span className="bg-gradient-to-r from-gray-200 to-white bg-clip-text text-transparent font-medium z-10">
+                            {showRobot ? "Hide Robot" : "Show Robot"}
+                          </span>
+                          <span className="z-10">
+                            <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
+                              <circle cx="12" cy="12" r="10" stroke="#a855f7" strokeWidth="2" />
+                              <rect x="9" y="8" width="6" height="8" rx="2" fill="#6366f1" />
+                            </svg>
+                          </span>
+                        </span>
+                      </div>
+                    </button>
                   </div>
 
                   {/* Social Links */}

@@ -88,14 +88,18 @@ const TechStack = memo(({ tech }) => (
   </div>
 ));
 
-const CTAButton = memo(({ href, text, icon: Icon }) => (
-  <a href={href}>
+const CTAButton = memo(({ href, text, icon: Icon, onClick }) => (
+  <a href={href} onClick={onClick}>
     <button className="group relative w-[160px]">
-      <div className="absolute -inset-0.5 bg-gradient-to-r from-[#4f52c9] to-[#8644c5] rounded-xl opacity-50 blur-md group-hover:opacity-90 transition-all duration-700"></div>
+      {/* Enhanced backlight for robot button */}
+      {text.includes('Robot') && (
+        <div className="absolute -inset-1 bg-gradient-to-r from-[#4f52c9] via-[#6366f1] to-[#8644c5] rounded-xl blur-xl opacity-40 group-hover:opacity-75 transition-all duration-700 animate-pulse"></div>
+      )}
+      <div className={`absolute -inset-0.5 bg-gradient-to-r from-[#4f52c9] to-[#8644c5] rounded-xl ${text.includes('Robot') ? 'opacity-70' : 'opacity-50'} blur-md group-hover:opacity-90 transition-all duration-700`}></div>
       <div className="relative h-11 bg-[#030014] backdrop-blur-xl rounded-lg border border-white/10 leading-none overflow-hidden">
         <div className="absolute inset-0 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 bg-gradient-to-r from-[#4f52c9]/20 to-[#8644c5]/20"></div>
         <span className="absolute inset-0 flex items-center justify-center gap-2 text-sm group-hover:gap-3 transition-all duration-300">
-          <span className="bg-gradient-to-r from-gray-200 to-white bg-clip-text text-transparent font-medium z-10">
+          <span className={`bg-gradient-to-r ${text.includes('Robot') ? 'from-blue-200 to-purple-200' : 'from-gray-200 to-white'} bg-clip-text text-transparent font-medium z-10`}>
             {text}
           </span>
           <Icon className={`w-4 h-4 text-gray-200 ${text === 'Contact' ? 'group-hover:translate-x-1' : 'group-hover:rotate-45'} transform transition-all duration-300 z-10`} />
@@ -278,28 +282,20 @@ const Home = () => {
                   <div className="flex flex-row gap-3 w-full justify-start" data-aos="fade-up" data-aos-delay="1400">
                     <CTAButton href="#Portofolio" text="Projects" icon={ExternalLink} />
                     <CTAButton href="#Contact" text="Contact" icon={Mail} />
-                    {/* Walking Robot Button */}
-                    <button
-                      className="group relative w-[160px]"
-                      onClick={() => setShowRobot((prev) => !prev)}
-                      type="button"
-                    >
-                      <div className="absolute -inset-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-xl opacity-50 blur-md group-hover:opacity-90 transition-all duration-700"></div>
-                      <div className="relative h-11 bg-[#030014] backdrop-blur-xl rounded-lg border border-white/10 leading-none overflow-hidden">
-                        <div className="absolute inset-0 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 bg-gradient-to-r from-[#6366f1]/20 to-[#a855f7]/20"></div>
-                        <span className="absolute inset-0 flex items-center justify-center gap-2 text-sm group-hover:gap-3 transition-all duration-300">
-                          <span className="bg-gradient-to-r from-gray-200 to-white bg-clip-text text-transparent font-medium z-10">
-                            {showRobot ? "Hide Robot" : "Show Robot"}
-                          </span>
-                          <span className="z-10">
-                            <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
-                              <circle cx="12" cy="12" r="10" stroke="#a855f7" strokeWidth="2" />
-                              <rect x="9" y="8" width="6" height="8" rx="2" fill="#6366f1" />
-                            </svg>
-                          </span>
-                        </span>
-                      </div>
-                    </button>
+                    <CTAButton 
+                      href="#" 
+                      text={showRobot ? "Hide Robot" : "Show Robot"} 
+                      icon={() => (
+                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
+                          <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
+                          <rect x="9" y="8" width="6" height="8" rx="2" fill="currentColor" />
+                        </svg>
+                      )}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setShowRobot((prev) => !prev);
+                      }}
+                    />
                   </div>
 
                   {/* Social Links */}

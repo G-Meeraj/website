@@ -218,12 +218,9 @@ const Home = () => {
       preserveAspectRatio: 'xMidYMid slice',
       progressiveLoad: true,
     },
-    style: { width: "150%", height: "150%" }, // Increased size
-    className: `w-full h-full transition-all duration-500 ${
-      isHovering 
-        ? "scale-[200%] sm:scale-[180%] md:scale-[170%] lg:scale-[160%] rotate-2" 
-        : "scale-[190%] sm:scale-[170%] md:scale-[160%] lg:scale-[150%]"
-    }`
+    // Remove excessive scaling for mobile
+    style: { width: "100%", height: "100%", maxWidth: 350, maxHeight: 350, margin: "0 auto" },
+    className: "w-full h-full transition-all duration-500"
   };
 
   return (
@@ -233,7 +230,7 @@ const Home = () => {
       <div className="animate-butter-smooth">
         <div className={`relative z-10 transition-all duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
           <div className="container mx-auto px-[5%] sm:px-6 lg:px-[0%] min-h-screen">
-            <div className="flex flex-col lg:flex-row items-center justify-center h-screen md:justify-between gap-0 sm:gap-12 lg:gap-20">
+            <div className="flex flex-col lg:flex-row items-center justify-center min-h-screen md:justify-between gap-4 sm:gap-12 lg:gap-20 py-4 sm:py-0">
               {/* Left Column */}
               <div className="w-full lg:w-1/2 space-y-6 sm:space-y-8 text-left lg:text-left order-1 lg:order-1 lg:mt-0 pl-0 sm:pl-4 md:pl-6 lg:pl-10"
                 data-aos="fade-right"
@@ -320,12 +317,12 @@ const Home = () => {
               </div>
 
               {/* Right Column - Optimized Lottie Animation */}
-              <div className="w-full py-[10%] sm:py-0 lg:w-1/2 h-auto lg:h-[600px] xl:h-[750px] relative flex items-center justify-center order-2 lg:order-2 mt-8 lg:mt-0"
+              <div className="w-full min-h-[220px] sm:min-h-[350px] lg:w-1/2 h-auto lg:h-[600px] xl:h-[750px] relative flex items-center justify-center order-2 lg:order-2 mt-6 sm:mt-8 lg:mt-0"
                 onMouseEnter={() => setIsHovering(true)}
                 onMouseLeave={() => setIsHovering(false)}
                 data-aos="fade-left"
                 data-aos-delay="600">
-                <div className="relative w-full h-auto animate-butter-smooth">
+                <div className="relative w-full h-full animate-butter-smooth">
                   <div className={`absolute inset-0 bg-gradient-to-r from-[#6366f1]/10 to-[#a855f7]/10 rounded-3xl blur-3xl transition-all duration-700 ease-in-out ${
                     isHovering ? "opacity-50 scale-105" : "opacity-20 scale-100"
                   }`}>
@@ -334,7 +331,17 @@ const Home = () => {
                   <div className={`relative z-10 w-full opacity-90 transform transition-transform duration-500 ${
                     isHovering ? "scale-105" : "scale-100"
                   }`}>
-                    <DotLottieReact {...lottieOptions} />
+                    <DotLottieReact
+                      {...lottieOptions}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        maxWidth: 350,
+                        maxHeight: 350,
+                        margin: "0 auto"
+                      }}
+                      className="mx-auto"
+                    />
                   </div>
 
                   <div className={`absolute inset-0 pointer-events-none transition-all duration-700 ${

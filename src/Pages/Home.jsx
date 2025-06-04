@@ -287,20 +287,23 @@ const Home = () => {
                   >
                     <CTAButton href="#Portofolio" text="Projects" icon={ExternalLink} />
                     <CTAButton href="#Contact" text="Contact" icon={Mail} />
-                    <CTAButton 
-                      href="#" 
-                      text={showRobot ? "Hide Robot" : "Show Robot"} 
-                      icon={() => (
-                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
-                          <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
-                          <rect x="9" y="8" width="6" height="8" rx="2" fill="currentColor" />
-                        </svg>
-                      )}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setShowRobot((prev) => !prev);
-                      }}
-                    />
+                    {/* Hide robot button on mobile, show from sm breakpoint and up */}
+                    <div className="hidden sm:block">
+                      <CTAButton 
+                        href="#" 
+                        text={showRobot ? "Hide Robot" : "Show Robot"} 
+                        icon={() => (
+                          <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
+                            <rect x="9" y="8" width="6" height="8" rx="2" fill="currentColor" />
+                          </svg>
+                        )}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setShowRobot((prev) => !prev);
+                        }}
+                      />
+                    </div>
                   </div>
 
                   {/* Social Links */}

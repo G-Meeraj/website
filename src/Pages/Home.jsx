@@ -201,9 +201,9 @@ const Home = () => {
                 <div className="flex flex-row gap-3 w-full justify-start items-center" data-aos="fade-up" data-aos-delay="1400">
                   <CTAButton href="#Portofolio" text="Projects" icon={ExternalLink} />
                   <CTAButton href="#Contact" text="Contact" icon={Mail} />
-                  {/* Show/Hide Robot Button - styled and aligned like other CTA buttons */}
+                  {/* Show/Hide Robot Button - hidden on mobile */}
                   <button
-                    className="group relative w-[160px]"
+                    className="group relative w-[160px] hidden sm:block"
                     onClick={() => setShowRobot((prev) => !prev)}
                     type="button"
                   >

@@ -227,13 +227,13 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#000000] overflow-hidden" id="Home">
+    <div className="min-h-screen bg-[#000000] overflow-x-hidden" id="Home">
       {/* Show WalkingRobot only if showRobot is true */}
       {showRobot && <WalkingRobot />}
       <div className="animate-butter-smooth">
         <div className={`relative z-10 transition-all duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
           <div className="container mx-auto px-[5%] sm:px-6 lg:px-[0%] min-h-screen">
-            <div className="flex flex-col lg:flex-row items-center justify-center h-screen md:justify-between gap-0 sm:gap-12 lg:gap-20">
+            <div className="flex flex-col lg:flex-row items-center justify-center min-h-screen md:justify-between gap-0 sm:gap-12 lg:gap-20">
               {/* Left Column */}
               <div className="w-full lg:w-1/2 space-y-6 sm:space-y-8 text-left lg:text-left order-1 lg:order-1 lg:mt-0 pl-0 sm:pl-4 md:pl-6 lg:pl-10"
                 data-aos="fade-right"
@@ -267,7 +267,7 @@ const Home = () => {
                       visible: {
                         opacity: 1,
                         transition: {
-                          staggerChildren: 0.2, // Stagger animation for each tech stack item
+                          staggerChildren: 0.2,
                         },
                       },
                     }}
@@ -287,8 +287,8 @@ const Home = () => {
                   >
                     <CTAButton href="#Portofolio" text="Projects" icon={ExternalLink} />
                     <CTAButton href="#Contact" text="Contact" icon={Mail} />
-                    {/* Hide robot button on mobile, show from sm breakpoint and up */}
-                    <div className="hidden sm:block">
+                    {/* Show robot button on all screens */}
+                    <div>
                       <CTAButton 
                         href="#" 
                         text={showRobot ? "Hide Robot" : "Show Robot"} 
@@ -308,7 +308,7 @@ const Home = () => {
 
                   {/* Social Links */}
                   <div 
-                    className="flex gap-4 justify-start" // Removed 'hidden sm:flex'
+                    className="flex gap-4 justify-start"
                     data-aos="fade-up" 
                     data-aos-delay="1600"
                   >

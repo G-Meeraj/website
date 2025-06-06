@@ -228,9 +228,12 @@ const Home = () => {
                 }`}>
                 </div>
 
-                <div className={`relative z-10 w-full h-full opacity-90 transform transition-transform duration-500 ${
+                <div className={`relative z-10 w-full transform transition-transform duration-500 ${
                   isHovering ? "scale-105" : "scale-100"
-                }`}>
+                }`}
+                style={{
+                  height: window.innerWidth <= 640 ? 'calc(100vw * (9/18))' : '100%' // Mobile aspect ratio 18:9
+                }}>
                   <Spline 
                     scene="https://prod.spline.design/KsTsKG3SWKibLmBe/scene.splinecode"
                     style={{ width: '100%', height: '100%' }}

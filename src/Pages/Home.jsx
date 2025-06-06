@@ -233,7 +233,7 @@ const Home = () => {
 
                 <div className="relative z-10 w-full h-full opacity-90 transition-all duration-700 ease-out">
                   <Spline 
-                    scene="https://prod.spline.design/625aSO10WKh6X8Bi/scene.splinecode"
+                    scene="https://prod.spline.design/KsTsKG3SWKibLmBe/scene.splinecode"
                     style={{ 
                       width: '100%', 
                       height: '100%',

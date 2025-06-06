@@ -217,7 +217,7 @@ const Home = () => {
             </div>
 
             {/* Right Column - Spline 3D Scene */}
-            <div className="w-full py-[10%] sm:py-0 lg:w-1/2 h-auto lg:h-[600px] xl:h-[750px] relative flex items-center justify-center order-2 lg:order-2 mt-8 lg:mt-0"
+            <div className="w-full py-[10%] sm:py-0 lg:w-1/2 h-[50vh] sm:h-auto lg:h-[600px] xl:h-[750px] relative flex items-center justify-center order-2 lg:order-2 mt-8 lg:mt-0"
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}
               data-aos="fade-left"
@@ -228,15 +228,17 @@ const Home = () => {
                 }`}>
                 </div>
 
-                <div className={`relative z-10 w-full transform transition-transform duration-500 ${
+                <div className={`relative z-10 w-full h-full transform transition-transform duration-500 ${
                   isHovering ? "scale-105" : "scale-100"
-                }`}
-                style={{
-                  height: window.innerWidth <= 640 ? 'calc(100vw * (9/18))' : '100%' // Mobile aspect ratio 18:9
-                }}>
+                }`}>
                   <Spline 
                     scene="https://prod.spline.design/KsTsKG3SWKibLmBe/scene.splinecode"
-                    style={{ width: '100%', height: '100%' }}
+                    style={{ 
+                      width: '100%', 
+                      height: '100%',
+                      position: 'relative',
+                      minHeight: window.innerWidth <= 640 ? '300px' : 'auto'
+                    }}
                   />
                 </div>
 

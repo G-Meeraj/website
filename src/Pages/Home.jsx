@@ -94,6 +94,7 @@ const Home = () => {
   const [isLoaded, setIsLoaded] = useState(false)
   const [isHovering, setIsHovering] = useState(false)
   const [showRobot, setShowRobot] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   // Optimize AOS initialization
   useEffect(() => {
@@ -142,6 +143,16 @@ const Home = () => {
     );
     return () => clearTimeout(timeout);
   }, [handleTyping]);
+
+  // Update window width on resize
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#000000] overflow-hidden" id="Home">
@@ -217,11 +228,15 @@ const Home = () => {
             </div>
 
             {/* Right Column - Spline 3D Scene */}
-            <div className="w-full py-[10%] sm:py-0 lg:w-1/2 h-[50vh] sm:h-auto lg:h-[600px] xl:h-[750px] relative flex items-center justify-center order-2 lg:order-2 mt-8 lg:mt-0"
+            <div className="w-full py-[10%] sm:py-0 lg:w-1/2 relative flex items-center justify-center order-2 lg:order-2 mt-8 lg:mt-0"
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}
               data-aos="fade-left"
-              data-aos-delay="600">
+              data-aos-delay="600"
+              style={{
+                height: window.innerWidth <= 640 ? `${(window.innerWidth * 4) / 3}px` : '600px', // 3:4 ratio for mobile
+              }}
+            >
               <div className="relative w-full h-full">
                 <div className={`absolute inset-0 bg-gradient-to-r from-[#6366f1]/10 to-[#a855f7]/10 rounded-3xl blur-3xl transition-all duration-700 ease-in-out ${
                   isHovering ? "opacity-50 scale-105" : "opacity-20 scale-100"
@@ -237,7 +252,7 @@ const Home = () => {
                       width: '100%', 
                       height: '100%',
                       position: 'relative',
-                      minHeight: window.innerWidth <= 640 ? '300px' : 'auto'
+                      aspectRatio: window.innerWidth <= 640 ? '3/4' : 'auto',
                     }}
                   />
                 </div>

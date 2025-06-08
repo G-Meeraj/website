@@ -8,17 +8,22 @@ const WelcomeScreen = ({ onComplete }) => {
   };
 
   return (
-    <div className="fixed inset-0">
-      <Spline scene="https://prod.spline.design/MczK2v1eVFV69R9G/scene.splinecode" />
-      
+    <div className="fixed inset-0 w-screen h-screen bg-black">
+      <div className="w-full h-full">
+        <Spline
+          scene="https://prod.spline.design/MczK2v1eVFV69R9G/scene.splinecode"
+          className="w-full h-full"
+        />
+      </div>
+
       <motion.button
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         whileTap={{ scale: 0.95 }}
-        transition={{ 
+        transition={{
           delay: 1,
           duration: 0.8,
-          ease: "easeOut"
+          ease: 'easeOut',
         }}
         onClick={handleGetStarted}
         className="absolute bottom-10 right-10 px-8 py-4 
